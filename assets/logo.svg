@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-label="OpenShellOrg">
+  <defs>
+    <linearGradient id="markBg" x1="16" y1="12" x2="132" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1526"/>
+      <stop offset="1" stop-color="#12233A"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="28" y1="36" x2="124" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D2FF" stop-opacity=".40"/>
+      <stop offset="1" stop-color="#00D2FF" stop-opacity=".10"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="16" width="128" height="128" rx="28" fill="url(#markBg)"/>
+  <g fill="none" stroke="url(#shell)" stroke-width="6" stroke-linecap="round" transform="translate(8 16)">
+    <path d="M34 100c0-24 15-44 30-44s30 20 30 44"/>
+    <path d="M22 106c0-34 22-58 42-58s42 24 42 58"/>
+    <path d="M12 110c0-42 28-72 52-72s52 30 52 72"/>
+  </g>
+  <g font-family="Cascadia Mono, Consolas, ui-monospace, monospace" font-size="36" font-weight="700" text-anchor="middle">
+    <text x="72" y="100">
+      <tspan fill="#F4F7FB">{</tspan><tspan fill="#F4F7FB">O</tspan><tspan fill="#FF3131">S</tspan><tspan fill="#00D2FF">O</tspan><tspan fill="#F4F7FB">}</tspan>
+    </text>
+  </g>
+
+  <g font-family="Segoe UI, system-ui, sans-serif" font-weight="700" fill="#0B1526">
+    <text x="168" y="98" font-size="56" letter-spacing="-1.5">OpenShellOrg</text>
+  </g>
+  <text x="172" y="128" font-family="Segoe UI, system-ui, sans-serif" font-size="18" fill="#4A607A" letter-spacing="0.4">Standards and tooling for better shells</text>
+</svg>

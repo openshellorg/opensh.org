@@ -1,0 +1,9 @@
+= OpenShellOrg
+
+Standards and tooling for better shells and CLIs.
+
+* Site: https://openshellorg.github.io
+* Org: https://github.com/openshellorg
+* Docs: https://openshellorg.github.io/open-shell-org/
+
+Not https://github.com/NVIDIA/OpenShell (agent sandbox runtime).

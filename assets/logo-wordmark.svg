@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" role="img" aria-label="OSO">
+  <text x="5" y="30" font-family="Cascadia Mono, Consolas, ui-monospace, monospace" font-weight="700" font-size="28">
+    <tspan fill="#F4F7FB">{</tspan>
+    <tspan fill="#F4F7FB">O</tspan>
+    <tspan fill="#FF3131">S</tspan>
+    <tspan fill="#00D2FF">O</tspan>
+    <tspan fill="#F4F7FB">}</tspan>
+  </text>
+</svg>

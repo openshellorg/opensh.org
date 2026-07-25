@@ -1,0 +1,11 @@
+*
+!.gitignore
+!README.adoc
+!CHANGELOG.adoc
+!index.html
+!assets/
+!assets/**
+!CNAME
+!.github/
+!.github/**
+!dprint.jsonc
