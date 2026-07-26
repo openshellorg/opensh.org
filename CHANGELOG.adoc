@@ -3,6 +3,6 @@
 == 2026-07-25
 
 * Add AsciiDoc-authored news feed (`news/posts/`) with RSS and Pages build step.
-* Publish three inaugural posts on org launch, Antora docs, and public philosophy.
+* Publish inaugural posts: Hello OpenShellOrg; Docs that match how we work.
 * Extract shared `assets/site.css` for landing + news pages.
 * Initial GitHub Pages site with OpenShellOrg brand assets.
