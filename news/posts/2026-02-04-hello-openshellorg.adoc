@@ -1,5 +1,5 @@
 = Hello, OpenShellOrg
-:revdate: 2026-07-25
+:revdate: 2026-02-04
 :description: Why this organization exists, and what we are building first.
 
 OpenShellOrg is a home for **standards and companion tooling** that make shells and CLIs less chaotic — for humans writing commands and for machines piping data.

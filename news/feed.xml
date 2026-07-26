@@ -5,18 +5,18 @@
     <link>https://openshellorg.github.io/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
     <item>
-      <title>Hello, OpenShellOrg</title>
-      <link>https://openshellorg.github.io/news/hello-openshellorg.html</link>
-      <guid>https://openshellorg.github.io/news/hello-openshellorg.html</guid>
-      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Why this organization exists, and what we are building first.</description>
-    </item>
-    <item>
       <title>Docs that match how we work</title>
       <link>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</link>
       <guid>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</guid>
       <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
       <description>Why we moved org docs to Antora with Valentus, and how every main repo became a docs component.</description>
+    </item>
+    <item>
+      <title>Hello, OpenShellOrg</title>
+      <link>https://openshellorg.github.io/news/hello-openshellorg.html</link>
+      <guid>https://openshellorg.github.io/news/hello-openshellorg.html</guid>
+      <pubDate>Wed, 04 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Why this organization exists, and what we are building first.</description>
     </item>
   </channel>
 </rss>
