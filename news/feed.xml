@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>OpenShellOrg News</title>
+    <link>https://openshellorg.github.io/news/</link>
+    <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
+    <item>
+      <title>Philosophy belongs in public</title>
+      <link>https://openshellorg.github.io/news/philosophy-belongs-in-public.html</link>
+      <guid>https://openshellorg.github.io/news/philosophy-belongs-in-public.html</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Dev-Centr alignment, the NVIDIA name collision, and keeping the GitHub profile README for visitors.</description>
+    </item>
+    <item>
+      <title>Hello, OpenShellOrg</title>
+      <link>https://openshellorg.github.io/news/hello-openshellorg.html</link>
+      <guid>https://openshellorg.github.io/news/hello-openshellorg.html</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Why this organization exists, and what we are building first.</description>
+    </item>
+    <item>
+      <title>Docs that match how we work</title>
+      <link>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</link>
+      <guid>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Why we moved org docs to Antora with Valentus, and how every main repo became a docs component.</description>
+    </item>
+  </channel>
+</rss>

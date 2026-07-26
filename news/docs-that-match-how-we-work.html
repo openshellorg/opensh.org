@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docs that match how we work · OpenShellOrg</title>
+    <meta name="description" content="Why we moved org docs to Antora with Valentus, and how every main repo became a docs component." />
+    <link rel="icon" href="../assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/site.css" />
+  </head>
+  <body>
+    <nav class="topnav" aria-label="Site">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo-mark.svg" width="32" height="32" alt="" />
+        OpenShellOrg
+      </a>
+      <div class="links">
+        <a href="../news/" aria-current="page">News</a>
+        <a href="https://openshellorg.github.io/open-shell-org/">Docs</a>
+        <a href="https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html">Philosophy</a>
+        <a href="https://github.com/openshellorg">GitHub</a>
+      </div>
+    </nav>
+    
+    <main class="page article">
+      <a class="back" href="./">← News</a>
+      <header>
+        <time datetime="2026-07-25">July 25, 2026</time>
+        <h1>Docs that match how we work</h1>
+        <p class="summary">Why we moved org docs to Antora with Valentus, and how every main repo became a docs component.</p>
+      </header>
+      <div class="body">
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Early experiments put a Starlight site inside the <code>open-shell-org</code> monorepo.
+It looked good — and it sat in the wrong place relative to how this org actually writes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_we_shipped_instead"><a class="anchor" href="#_what_we_shipped_instead"></a>What we shipped instead</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Antora</strong> for multi-repo documentation</p>
+</li>
+<li>
+<p><strong>Valentus</strong> UI (rolling <code>v2</code> line) for the chrome</p>
+</li>
+<li>
+<p>One playbook in <code>open-shell-org</code> that pulls content from each project repo</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That means <code>shell-architecture</code>, <code>nu-emit</code>, <code>nu-require</code>, <code>about</code>, <code>info</code>, <code>prohelp</code>, and <code>prohelp-cli</code> each own their AsciiDoc under <code>docs/</code>, and the published site assembles them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters"><a class="anchor" href="#_why_this_matters"></a>Why this matters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standards orgs accumulate sibling repositories quickly.
+Keeping narrative docs next to the code — then composing them — beats copying Markdown into a central marketing app every time a project moves.</p>
+</div>
+<div class="paragraph">
+<p>Published site: <a href="https://openshellorg.github.io/open-shell-org/" class="bare">https://openshellorg.github.io/open-shell-org/</a>
+Local sibling builds: <code>pnpm docs:local</code> in <code>open-shell-org</code>.</p>
+</div>
+</div>
+</div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,9 +1,34 @@
-= OpenShellOrg
+= openshellorg.github.io
 
-Standards and tooling for better shells and CLIs.
+Organization landing site for https://openshellorg.github.io[OpenShellOrg].
 
-* Site: https://openshellorg.github.io
-* Org: https://github.com/openshellorg
+== News / blog
+
+Author posts as AsciiDoc in `news/posts/`:
+
+----
+news/posts/YYYY-MM-DD-slug.adoc
+----
+
+Required attributes:
+
+* Document title (`= Title`)
+* `:revdate: YYYY-MM-DD`
+* `:description:` — short summary for the feed
+
+Build:
+
+----
+pnpm install
+pnpm build
+----
+
+This writes `news/index.html`, one HTML page per post, and `news/feed.xml` (RSS).
+
+CI runs the same build before deploying GitHub Pages.
+
+== Other links
+
 * Docs: https://openshellorg.github.io/open-shell-org/
-
-Not https://github.com/NVIDIA/OpenShell (agent sandbox runtime).
+* Philosophy: https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html
+* Changelog: link:CHANGELOG.adoc[]

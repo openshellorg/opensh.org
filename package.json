@@ -1,0 +1,13 @@
+{
+  "name": "openshellorg-github-io",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "build": "node scripts/build-news.mjs",
+    "news": "node scripts/build-news.mjs"
+  },
+  "devDependencies": {
+    "@asciidoctor/core": "^3.0.4"
+  }
+}

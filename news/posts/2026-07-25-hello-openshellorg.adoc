@@ -1,0 +1,23 @@
+= Hello, OpenShellOrg
+:revdate: 2026-07-25
+:description: Why this organization exists, and what we are building first.
+
+OpenShellOrg is a home for **standards and companion tooling** that make shells and CLIs less chaotic — for humans writing commands and for machines piping data.
+
+== The short version
+
+We care about three things:
+
+. Predictable CLI flag syntax (**SOS** — Save Our Syntax)
+. Structured shell pipelines (we endorse https://www.nushell.sh/[Nushell]; we do not reinvent it)
+. Progressive help that does not dump a wall of text
+
+If you landed here looking for https://github.com/NVIDIA/OpenShell[NVIDIA OpenShell]: different project.
+That one is an agent sandbox runtime.
+This one is about CLI and shell DevX.
+
+== Where to go next
+
+* https://openshellorg.github.io/open-shell-org/[Documentation]
+* https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html[Philosophy]
+* https://openshellorg.github.io/open-shell-org/open-shell-org/ecosystem.html[Ecosystem map]

@@ -1,0 +1,22 @@
+= Docs that match how we work
+:revdate: 2026-07-25
+:description: Why we moved org docs to Antora with Valentus, and how every main repo became a docs component.
+
+Early experiments put a Starlight site inside the `open-shell-org` monorepo.
+It looked good — and it sat in the wrong place relative to how this org actually writes.
+
+== What we shipped instead
+
+* **Antora** for multi-repo documentation
+* **Valentus** UI (rolling `v2` line) for the chrome
+* One playbook in `open-shell-org` that pulls content from each project repo
+
+That means `shell-architecture`, `nu-emit`, `nu-require`, `about`, `info`, `prohelp`, and `prohelp-cli` each own their AsciiDoc under `docs/`, and the published site assembles them.
+
+== Why this matters
+
+Standards orgs accumulate sibling repositories quickly.
+Keeping narrative docs next to the code — then composing them — beats copying Markdown into a central marketing app every time a project moves.
+
+Published site: https://openshellorg.github.io/open-shell-org/
+Local sibling builds: `pnpm docs:local` in `open-shell-org`.
