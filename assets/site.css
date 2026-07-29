@@ -6,6 +6,37 @@
   --accent-red: #ff3131;
   --accent-cyan: #00d2ff;
   --rule: rgba(11, 21, 38, 0.12);
+
+  /* Architecture diagrams (inline SVG inherits these) */
+  --diagram-ink: var(--ink);
+  --diagram-muted: var(--muted);
+  --diagram-surface: #f7fafc;
+  --diagram-card: #ffffff;
+  --diagram-border: rgba(11, 21, 38, 0.16);
+  --diagram-edge: #5a718c;
+  --diagram-accent: #0a7a8a;
+  --diagram-accent-soft: rgba(0, 210, 255, 0.14);
+  --diagram-ok: #1a7a4c;
+  --diagram-ok-soft: rgba(26, 122, 76, 0.12);
+  --diagram-font: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8eef7;
+    --muted: #9aa8b8;
+    --paper: #0c121a;
+    --paper-deep: #121a24;
+    --rule: rgba(232, 238, 247, 0.14);
+    --diagram-surface: #121a24;
+    --diagram-card: #1a2430;
+    --diagram-border: rgba(232, 238, 247, 0.16);
+    --diagram-edge: #8a9bb0;
+    --diagram-accent: #00d2ff;
+    --diagram-accent-soft: rgba(0, 210, 255, 0.12);
+    --diagram-ok: #3dd68c;
+    --diagram-ok-soft: rgba(61, 214, 140, 0.12);
+  }
 }
 
 * {
@@ -321,3 +352,46 @@ h1 {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
+
+.diagram-figure {
+  margin: 2rem 0 0;
+  text-align: left;
+}
+
+.diagram-figure img,
+.diagram-figure .diagram-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--diagram-border);
+  background: var(--diagram-surface);
+}
+
+.diagram-caption {
+  margin: 0.75rem 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+.architecture {
+  width: min(44rem, 100%);
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
+.architecture h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.architecture .lede {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+

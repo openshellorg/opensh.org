@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="sib-title sib-desc">
+  <title id="sib-title">DevCentr and OpenShellOrg ownership split</title>
+  <desc id="sib-desc">
+    DevCentr owns toolchain lifecycle philosophy and control plane. OpenShellOrg owns auto-install
+    and re-exec at the shell entrypoint.
+  </desc>
+  <style>
+    :root {
+      --diagram-ink: #0b1526;
+      --diagram-muted: #4a607a;
+      --diagram-surface: #f7fafc;
+      --diagram-border: rgba(11, 21, 38, 0.16);
+      --diagram-edge: #5a718c;
+      --diagram-accent: #0a7a8a;
+      --diagram-accent-soft: rgba(0, 210, 255, 0.14);
+      --diagram-ok: #1a7a4c;
+      --diagram-ok-soft: rgba(26, 122, 76, 0.12);
+      --diagram-font: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --diagram-ink: #e8eef7;
+        --diagram-muted: #9aa8b8;
+        --diagram-surface: #121a24;
+        --diagram-border: rgba(232, 238, 247, 0.16);
+        --diagram-edge: #8a9bb0;
+        --diagram-accent: #00d2ff;
+        --diagram-accent-soft: rgba(0, 210, 255, 0.12);
+        --diagram-ok: #3dd68c;
+        --diagram-ok-soft: rgba(61, 214, 140, 0.12);
+      }
+    }
+  </style>
+  <rect x="16" y="16" width="688" height="248" rx="14" fill="var(--diagram-surface)" stroke="var(--diagram-border)" />
+  <g font-family="var(--diagram-font)">
+    <rect x="40" y="48" width="280" height="180" rx="12" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-width="2" />
+    <text x="180" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="var(--diagram-accent)">DevCentr</text>
+    <text x="180" y="108" text-anchor="middle" font-size="13" fill="var(--diagram-ink)">Toolchain Management</text>
+    <text x="180" y="132" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Pattern ’ Protocol ’ TCoP ’ TCF</text>
+    <text x="180" y="164" text-anchor="middle" font-size="12" fill="var(--diagram-ink)">Pin · health · repair · upgrade</text>
+    <text x="180" y="188" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Lifecycle ownership</text>
+
+    <rect x="400" y="48" width="280" height="180" rx="12" fill="var(--diagram-ok-soft)" stroke="var(--diagram-ok)" stroke-width="2" />
+    <text x="540" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="var(--diagram-ok)">OpenShellOrg</text>
+    <text x="540" y="108" text-anchor="middle" font-size="13" fill="var(--diagram-ink)">Entrypoint Dispatch</text>
+    <text x="540" y="132" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Resolve ’ install ’ re-exec</text>
+    <text x="540" y="164" text-anchor="middle" font-size="12" fill="var(--diagram-ink)">Shell / CLI process boundary</text>
+    <text x="540" y="188" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Invocation honesty</text>
+
+    <text x="360" y="140" text-anchor="middle" font-size="18" fill="var(--diagram-edge)">”</text>
+  </g>
+</svg>

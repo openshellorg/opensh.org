@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="tc-title tc-desc">
+  <title id="tc-title">Official toolchain architecture</title>
+  <desc id="tc-desc">
+    Official entrypoint resolves the project pin, installs if needed, re-execs under the correct
+    version for this process tree, and owns health, repair, and upgrade without mutating the machine default.
+  </desc>
+  <style>
+    :root {
+      --diagram-ink: #0b1526;
+      --diagram-muted: #4a607a;
+      --diagram-surface: #f7fafc;
+      --diagram-card: #ffffff;
+      --diagram-border: rgba(11, 21, 38, 0.16);
+      --diagram-edge: #5a718c;
+      --diagram-accent: #0a7a8a;
+      --diagram-accent-soft: rgba(0, 210, 255, 0.14);
+      --diagram-ok: #1a7a4c;
+      --diagram-ok-soft: rgba(26, 122, 76, 0.12);
+      --diagram-font: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --diagram-ink: #e8eef7;
+        --diagram-muted: #9aa8b8;
+        --diagram-surface: #121a24;
+        --diagram-card: #1a2430;
+        --diagram-border: rgba(232, 238, 247, 0.16);
+        --diagram-edge: #8a9bb0;
+        --diagram-accent: #00d2ff;
+        --diagram-accent-soft: rgba(0, 210, 255, 0.12);
+        --diagram-ok: #3dd68c;
+        --diagram-ok-soft: rgba(61, 214, 140, 0.12);
+      }
+    }
+  </style>
+  <defs>
+    <marker id="tc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--diagram-edge)" />
+    </marker>
+  </defs>
+  <rect x="16" y="16" width="688" height="388" rx="14" fill="var(--diagram-surface)" stroke="var(--diagram-border)" />
+  <g font-family="var(--diagram-font)">
+    <rect x="40" y="48" width="150" height="56" rx="10" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="115" y="74" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Actors</text>
+    <text x="115" y="92" text-anchor="middle" font-size="14" font-weight="600" fill="var(--diagram-ink)">Dev ù IDE ù CI</text>
+
+    <rect x="230" y="40" width="260" height="200" rx="14" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-width="2" />
+    <text x="360" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="var(--diagram-accent)">Official entrypoint (TCoP)</text>
+    <rect x="252" y="84" width="216" height="36" rx="8" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="360" y="107" text-anchor="middle" font-size="13" fill="var(--diagram-ink)">Resolve project pin</text>
+    <rect x="252" y="130" width="100" height="36" rx="8" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="302" y="153" text-anchor="middle" font-size="12" fill="var(--diagram-ink)">Install if needed</text>
+    <rect x="368" y="130" width="100" height="36" rx="8" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="418" y="153" text-anchor="middle" font-size="12" fill="var(--diagram-ink)">Re-exec</text>
+    <rect x="252" y="176" width="216" height="44" rx="8" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="360" y="194" text-anchor="middle" font-size="11" fill="var(--diagram-muted)">Also owns</text>
+    <text x="360" y="210" text-anchor="middle" font-size="12" fill="var(--diagram-ink)">Health ù repair ù upgrade</text>
+
+    <rect x="530" y="48" width="150" height="56" rx="10" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="605" y="74" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Project declares</text>
+    <text x="605" y="92" text-anchor="middle" font-size="13" font-weight="600" fill="var(--diagram-ink)">engines / pin file</text>
+
+    <rect x="250" y="280" width="220" height="56" rx="10" fill="var(--diagram-ok-soft)" stroke="var(--diagram-ok)" stroke-width="2" />
+    <text x="360" y="306" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Correct major for this tree</text>
+    <text x="360" y="324" text-anchor="middle" font-size="14" font-weight="600" fill="var(--diagram-ink)">Runtime / SDK</text>
+
+    <rect x="40" y="280" width="170" height="72" rx="10" fill="var(--diagram-card)" stroke="var(--diagram-border)" stroke-dasharray="5 4" />
+    <text x="125" y="308" text-anchor="middle" font-size="12" fill="var(--diagram-muted)">Machine default</text>
+    <text x="125" y="326" text-anchor="middle" font-size="13" font-weight="600" fill="var(--diagram-ink)">May stay on latest</text>
+    <text x="125" y="342" text-anchor="middle" font-size="11" fill="var(--diagram-muted)">not mutated</text>
+
+    <rect x="520" y="280" width="160" height="56" rx="10" fill="var(--diagram-card)" stroke="var(--diagram-border)" />
+    <text x="600" y="314" text-anchor="middle" font-size="14" font-weight="600" fill="var(--diagram-ink)">Project / app</text>
+  </g>
+  <g fill="none" stroke="var(--diagram-edge)" stroke-width="1.75" marker-end="url(#tc-arrow)">
+    <path d="M190 76 H230" />
+    <path d="M530 76 H490" />
+    <path d="M360 240 V280" />
+    <path d="M470 308 H520" />
+  </g>
+  <text x="360" y="268" text-anchor="middle" font-size="11" fill="var(--diagram-muted)" font-family="var(--diagram-font)">auto-install + run</text>
+</svg>

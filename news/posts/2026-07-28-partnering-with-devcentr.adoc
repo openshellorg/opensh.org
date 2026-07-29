@@ -14,6 +14,12 @@ We've written that down properly now:
 * Toolchain Management Pattern stays canonical on the DevCentr docs side.
 * Cross-links both ways so nobody has to guess which org “owns the essay.”
 
+.Official toolchain architecture
+image::../assets/diagrams/toolchain-architecture.svg["Official entrypoint owns pin resolve, install, re-exec, and lifecycle",width=720]
+
+.Sibling ownership
+image::../assets/diagrams/sibling-ownership.svg["DevCentr lifecycle vs OpenShellOrg entrypoint dispatch",width=720]
+
 We're **not** merging. Product orchestration and industry standards need different issue trackers and contribution norms. We *are* treating each other as the obvious sibling link in footers, docs, and news — because users shouldn't have to archaeology their way to the other half of the argument.
 
 Come hang out: link:https://devcentr.org[devcentr.org], link:https://docs.devcentr.org[docs.devcentr.org], and our own link:https://openshellorg.github.io/open-shell-org/[docs hub]. If you build CLIs, start with honesty at `argv[0]`. If you build environments, start with a control plane that doesn't pretend `engines` is a vibe.

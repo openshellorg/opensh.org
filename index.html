@@ -39,6 +39,43 @@
           (agent sandbox runtime).
         </p>
       </section>
+
+      <section class="architecture" aria-labelledby="arch-heading">
+        <h2 id="arch-heading">Honest toolchain entrypoints</h2>
+        <p class="lede">
+          Resolve the pin, install if needed, re-exec for this process tree. Leave the machine default alone.
+        </p>
+        <figure class="diagram-figure">
+          <img
+            class="diagram-svg"
+            src="assets/diagrams/toolchain-architecture.svg"
+            width="720"
+            height="420"
+            alt="Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade"
+          />
+          <figcaption class="diagram-caption">
+            Official entrypoint = Toolchain Control Plane behaviors at invocation
+          </figcaption>
+        </figure>
+        <figure class="diagram-figure">
+          <img
+            class="diagram-svg"
+            src="assets/diagrams/sibling-ownership.svg"
+            width="720"
+            height="280"
+            alt="DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch"
+          />
+          <figcaption class="diagram-caption">
+            DevCentr lifecycle · OpenShellOrg dispatch — siblings, not duplicates
+          </figcaption>
+        </figure>
+        <p class="note" style="margin-top: 1.25rem">
+          Docs:
+          <a href="https://opensh.org/open-shell-org/shell-architecture/entrypoint-dispatch.html">Entrypoint Dispatch</a>
+          ·
+          <a href="https://docs.devcentr.org/general-knowledge/explanation/infrastructure/toolchain-management.html">Toolchain Management</a>
+        </p>
+      </section>
     </main>
     <footer class="site-footer" aria-label="Site footer">
       <p class="footer-related-label">Related projects</p>
