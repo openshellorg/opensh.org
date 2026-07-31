@@ -18,6 +18,6 @@ This one is about CLI and shell DevX.
 
 == Where to go next
 
-* https://openshellorg.github.io/open-shell-org/[Documentation]
-* https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html[Philosophy]
-* https://openshellorg.github.io/open-shell-org/open-shell-org/ecosystem.html[Ecosystem map]
+* https://openshellorg.github.io/docs/[Documentation]
+* https://openshellorg.github.io/docs/open-shell-org/philosophy.html[Philosophy]
+* https://openshellorg.github.io/docs/open-shell-org/ecosystem.html[Ecosystem map]

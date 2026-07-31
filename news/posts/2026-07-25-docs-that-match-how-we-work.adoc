@@ -18,5 +18,5 @@ That means `shell-architecture`, `nu-emit`, `nu-require`, `about`, `info`, `proh
 Standards orgs accumulate sibling repositories quickly.
 Keeping narrative docs next to the code — then composing them — beats copying Markdown into a central marketing app every time a project moves.
 
-Published site: https://openshellorg.github.io/open-shell-org/
+Published site: https://openshellorg.github.io/docs/
 Local sibling builds: `pnpm docs:local` in `open-shell-org`.

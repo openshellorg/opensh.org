@@ -29,6 +29,6 @@ CI runs the same build before deploying GitHub Pages.
 
 == Other links
 
-* Docs: https://openshellorg.github.io/open-shell-org/
-* Philosophy: https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html
+* Docs: https://openshellorg.github.io/docs/
+* Philosophy: https://openshellorg.github.io/docs/open-shell-org/philosophy.html
 * Changelog: link:CHANGELOG.adoc[]

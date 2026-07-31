@@ -43,8 +43,8 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
       </a>
       <div class="links">
         <a href="${rootPrefix}news/"${active === "news" ? ' aria-current="page"' : ""}>News</a>
-        <a href="https://openshellorg.github.io/open-shell-org/">Docs</a>
-        <a href="https://openshellorg.github.io/open-shell-org/open-shell-org/philosophy.html">Philosophy</a>
+        <a href="https://openshellorg.github.io/docs/">Docs</a>
+        <a href="https://openshellorg.github.io/docs/open-shell-org/philosophy.html">Philosophy</a>
         <a href="https://github.com/openshellorg">GitHub</a>
       </div>
     </nav>
@@ -54,7 +54,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
       <p class="footer-related-links">
         <a href="https://openshellorg.github.io/">OpenShellOrg</a>
         ·
-        <a href="https://openshellorg.github.io/open-shell-org/">OSO Docs</a>
+        <a href="https://openshellorg.github.io/docs/">OSO Docs</a>
         ·
         <a href="https://github.com/openshellorg">openshellorg</a>
         ·
