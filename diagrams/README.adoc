@@ -1,0 +1,10 @@
+= Site diagrams
+
+Prerendered Mermaid figures for opensh.org.
+
+* **Authoritative `.mmd` sources:** https://github.com/openshellorg/shell-architecture[`openshellorg/shell-architecture`] → `docs/modules/ROOT/partials/diagrams/`
+* **Theme:** `theme.json` (concrete Mermaid `themeVariables` for `mmdc`) + `mermaid-config.json`
+* **Build:** `pnpm diagrams` → `mmdc` → `@openshellorg/mermaid-svg-css-vars` (`webCompatibility`) → `assets/diagrams/*.svg`
+* **Embed:** Mermaid 11 emits `foreignObject` labels; the site uses `<object type="image/svg+xml">` (not `<img>`) so labels render.
+
+Locally, keep a sibling checkout of `shell-architecture` (or set `DIAGRAM_SRC`). CI checks it out to `_diagram-src/`.

@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-07-30
+
+* Prerender architecture diagrams from Mermaid sources in `openshellorg/shell-architecture` via `mmdc` + `@openshellorg/mermaid-svg-css-vars` (`pnpm diagrams`).
+* Replace hand-authored diagram SVGs; Pages workflow checks out shell-architecture for `.mmd` sources.
+
 == 2026-07-25
 
 * Add AsciiDoc-authored news feed (`news/posts/`) with RSS and Pages build step.

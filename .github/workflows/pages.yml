@@ -20,6 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout diagram sources
+        uses: actions/checkout@v4
+        with:
+          repository: openshellorg/shell-architecture
+          path: _diagram-src
+
       - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
@@ -27,11 +33,11 @@ jobs:
           node-version: "22"
           cache: "pnpm"
 
-      - name: Install and build news
+      - name: Install, build diagrams + news
         run: |
           pnpm install --frozen-lockfile
           pnpm build
-          rm -rf node_modules
+          rm -rf node_modules diagrams/.cache _diagram-src
 
       - uses: actions/upload-pages-artifact@v3
         with:

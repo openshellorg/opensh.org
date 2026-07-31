@@ -10,6 +10,10 @@
 !assets/**
 !scripts/
 !scripts/**
+!diagrams/
+!diagrams/**
+diagrams/.cache/
+diagrams/.cache/**
 !news/
 !news/posts/
 !news/posts/**

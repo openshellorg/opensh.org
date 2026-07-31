@@ -15,10 +15,14 @@ We've written that down properly now:
 * Cross-links both ways so nobody has to guess which org “owns the essay.”
 
 .Official toolchain architecture
-image::../assets/diagrams/toolchain-architecture.svg["Official entrypoint owns pin resolve, install, re-exec, and lifecycle",width=720]
+++++
+<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/toolchain-architecture.svg" width="720" aria-label="Official entrypoint owns pin resolve, install, re-exec, and lifecycle">Official entrypoint owns pin resolve, install, re-exec, and lifecycle</object>
+++++
 
 .Sibling ownership
-image::../assets/diagrams/sibling-ownership.svg["DevCentr lifecycle vs OpenShellOrg entrypoint dispatch",width=720]
+++++
+<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/sibling-ownership.svg" width="720" aria-label="DevCentr lifecycle vs OpenShellOrg entrypoint dispatch">DevCentr lifecycle vs OpenShellOrg entrypoint dispatch</object>
+++++
 
 We're **not** merging. Product orchestration and industry standards need different issue trackers and contribution norms. We *are* treating each other as the obvious sibling link in footers, docs, and news — because users shouldn't have to archaeology their way to the other half of the argument.
 

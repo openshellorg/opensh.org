@@ -1,0 +1,47 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#d6f4f8",
+    "primaryTextColor": "#0b1526",
+    "primaryBorderColor": "#0a7a8a",
+    "secondaryColor": "#e8f5ee",
+    "secondaryTextColor": "#0b1526",
+    "secondaryBorderColor": "#1a7a4c",
+    "tertiaryColor": "#f7fafc",
+    "tertiaryTextColor": "#4a607a",
+    "tertiaryBorderColor": "rgba(11, 21, 38, 0.16)",
+    "lineColor": "#5a718c",
+    "textColor": "#0b1526",
+    "mainBkg": "#d6f4f8",
+    "nodeBorder": "#0a7a8a",
+    "clusterBkg": "#e8f7fa",
+    "clusterBorder": "#0a7a8a",
+    "titleColor": "#0b1526",
+    "edgeLabelBackground": "#f7fafc",
+    "actorBkg": "#d6f4f8",
+    "actorBorder": "#0a7a8a",
+    "actorTextColor": "#0b1526",
+    "actorLineColor": "#5a718c",
+    "signalColor": "#5a718c",
+    "signalTextColor": "#0b1526",
+    "labelBoxBkgColor": "#ffffff",
+    "labelBoxBorderColor": "rgba(11, 21, 38, 0.16)",
+    "labelTextColor": "#0b1526",
+    "loopTextColor": "#4a607a",
+    "noteBkgColor": "#e8f5ee",
+    "noteTextColor": "#0b1526",
+    "noteBorderColor": "#1a7a4c",
+    "activationBkgColor": "#e8f7fa",
+    "activationBorderColor": "#0a7a8a",
+    "sequenceNumberColor": "#ffffff",
+    "fontFamily": "IBM Plex Sans, ui-sans-serif, system-ui, sans-serif"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "basis"
+  },
+  "sequence": {
+    "mirrorActors": false,
+    "useMaxWidth": true
+  }
+}

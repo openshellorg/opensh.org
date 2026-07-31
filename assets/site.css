@@ -7,18 +7,29 @@
   --accent-cyan: #00d2ff;
   --rule: rgba(11, 21, 38, 0.12);
 
-  /* Architecture diagrams (inline SVG inherits these) */
-  --diagram-ink: var(--ink);
-  --diagram-muted: var(--muted);
-  --diagram-surface: #f7fafc;
-  --diagram-card: #ffffff;
-  --diagram-border: rgba(11, 21, 38, 0.16);
-  --diagram-edge: #5a718c;
-  --diagram-accent: #0a7a8a;
-  --diagram-accent-soft: rgba(0, 210, 255, 0.14);
-  --diagram-ok: #1a7a4c;
-  --diagram-ok-soft: rgba(26, 122, 76, 0.12);
-  --diagram-font: "IBM Plex Sans", system-ui, sans-serif;
+  /* Mermaid-prerendered SVGs (host override when SVG is inlined; <img> uses fallbacks) */
+  --mermaid-primaryColor: #d6f4f8;
+  --mermaid-primaryTextColor: var(--ink);
+  --mermaid-primaryBorderColor: #0a7a8a;
+  --mermaid-secondaryColor: #e8f5ee;
+  --mermaid-secondaryTextColor: var(--ink);
+  --mermaid-secondaryBorderColor: #1a7a4c;
+  --mermaid-tertiaryColor: #f7fafc;
+  --mermaid-tertiaryTextColor: var(--muted);
+  --mermaid-lineColor: #5a718c;
+  --mermaid-textColor: var(--ink);
+  --mermaid-mainBkg: #d6f4f8;
+  --mermaid-nodeBorder: #0a7a8a;
+  --mermaid-clusterBkg: #e8f7fa;
+  --mermaid-clusterBorder: #0a7a8a;
+  --mermaid-titleColor: var(--ink);
+  --mermaid-edgeLabelBackground: #f7fafc;
+  --mermaid-actorBkg: #d6f4f8;
+  --mermaid-actorBorder: #0a7a8a;
+  --mermaid-actorTextColor: var(--ink);
+  --mermaid-noteBkgColor: #e8f5ee;
+  --mermaid-noteTextColor: var(--ink);
+  --mermaid-noteBorderColor: #1a7a4c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,14 +39,28 @@
     --paper: #0c121a;
     --paper-deep: #121a24;
     --rule: rgba(232, 238, 247, 0.14);
-    --diagram-surface: #121a24;
-    --diagram-card: #1a2430;
-    --diagram-border: rgba(232, 238, 247, 0.16);
-    --diagram-edge: #8a9bb0;
-    --diagram-accent: #00d2ff;
-    --diagram-accent-soft: rgba(0, 210, 255, 0.12);
-    --diagram-ok: #3dd68c;
-    --diagram-ok-soft: rgba(61, 214, 140, 0.12);
+    --mermaid-primaryColor: #1a2430;
+    --mermaid-primaryTextColor: var(--ink);
+    --mermaid-primaryBorderColor: #00d2ff;
+    --mermaid-secondaryColor: #143028;
+    --mermaid-secondaryTextColor: var(--ink);
+    --mermaid-secondaryBorderColor: #3dd68c;
+    --mermaid-tertiaryColor: #121a24;
+    --mermaid-tertiaryTextColor: var(--muted);
+    --mermaid-lineColor: #8a9bb0;
+    --mermaid-textColor: var(--ink);
+    --mermaid-mainBkg: #1a2430;
+    --mermaid-nodeBorder: #00d2ff;
+    --mermaid-clusterBkg: #121a24;
+    --mermaid-clusterBorder: #00d2ff;
+    --mermaid-titleColor: var(--ink);
+    --mermaid-edgeLabelBackground: #121a24;
+    --mermaid-actorBkg: #1a2430;
+    --mermaid-actorBorder: #00d2ff;
+    --mermaid-actorTextColor: var(--ink);
+    --mermaid-noteBkgColor: #143028;
+    --mermaid-noteTextColor: var(--ink);
+    --mermaid-noteBorderColor: #3dd68c;
   }
 }
 
@@ -359,14 +384,17 @@ h1 {
 }
 
 .diagram-figure img,
+.diagram-figure object.diagram-svg,
 .diagram-figure .diagram-svg {
   display: block;
   width: 100%;
   height: auto;
+  min-height: 12rem;
   border-radius: 0.75rem;
-  border: 1px solid var(--diagram-border);
-  background: var(--diagram-surface);
+  border: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 80%, white);
 }
+
 
 .diagram-caption {
   margin: 0.75rem 0 0;

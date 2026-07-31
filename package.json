@@ -4,10 +4,20 @@
   "type": "module",
   "packageManager": "pnpm@10.28.2",
   "scripts": {
-    "build": "node scripts/build-news.mjs",
-    "news": "node scripts/build-news.mjs"
+    "build": "pnpm run diagrams && node scripts/build-news.mjs",
+    "news": "node scripts/build-news.mjs",
+    "diagrams": "node scripts/build-diagrams.mjs"
   },
   "devDependencies": {
-    "@asciidoctor/core": "^3.0.4"
+    "@asciidoctor/core": "^3.0.4",
+    "@mermaid-js/mermaid-cli": "^11.9.0",
+    "@openshellorg/mermaid-svg-css-vars": "github:openshellorg/mermaid-svg-css-vars"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@openshellorg/mermaid-svg-css-vars",
+      "@mermaid-js/mermaid-cli",
+      "puppeteer"
+    ]
   }
 }

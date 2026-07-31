@@ -46,25 +46,31 @@
           Resolve the pin, install if needed, re-exec for this process tree. Leave the machine default alone.
         </p>
         <figure class="diagram-figure">
-          <img
+          <object
             class="diagram-svg"
-            src="assets/diagrams/toolchain-architecture.svg"
+            type="image/svg+xml"
+            data="assets/diagrams/toolchain-architecture.svg"
             width="720"
             height="420"
-            alt="Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade"
-          />
+            aria-label="Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade"
+          >
+            Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade
+          </object>
           <figcaption class="diagram-caption">
             Official entrypoint = Toolchain Control Plane behaviors at invocation
           </figcaption>
         </figure>
         <figure class="diagram-figure">
-          <img
+          <object
             class="diagram-svg"
-            src="assets/diagrams/sibling-ownership.svg"
+            type="image/svg+xml"
+            data="assets/diagrams/sibling-ownership.svg"
             width="720"
             height="280"
-            alt="DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch"
-          />
+            aria-label="DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch"
+          >
+            DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch
+          </object>
           <figcaption class="diagram-caption">
             DevCentr lifecycle · OpenShellOrg dispatch — siblings, not duplicates
           </figcaption>
