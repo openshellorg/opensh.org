@@ -1,11 +1,54 @@
-= openshellorg.github.io
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/opensh.org/graphs/contributors]
+image:https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/opensh.org/network/members]
+image:https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/opensh.org/stargazers]
+image:https://img.shields.io/github/issues/openshellorg/opensh.org.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/opensh.org/issues]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/openshellorg/opensh.org.svg?style=for-the-badge[Issues]
+endif::[]
+
+= OpenShellOrg GitHub Pages site
+
+OpenShellOrg GitHub Pages site — organization landing at https://openshellorg.github.io.
+
+link:http://opensh.org/[Explore the site] ·
+link:https://github.com/openshellorg/opensh.org/issues[Report Bug] ·
+link:https://github.com/openshellorg/opensh.org/issues[Request Feature]
+
+== About The Project
 
 Organization landing site for https://openshellorg.github.io[OpenShellOrg].
 
-== News / blog
+== Built With
+
+* HTML
+* pnpm build pipeline
+
+== Getting Started
+
+[source,bash]
+----
+pnpm install
+pnpm build
+----
+
+== Usage
+
+=== News / blog
 
 Author posts as AsciiDoc in `news/posts/`:
 
+[source]
 ----
 news/posts/YYYY-MM-DD-slug.adoc
 ----
@@ -16,19 +59,19 @@ Required attributes:
 * `:revdate: YYYY-MM-DD`
 * `:description:` — short summary for the feed
 
-Build:
-
-----
-pnpm install
-pnpm build
-----
-
 This writes `news/index.html`, one HTML page per post, and `news/feed.xml` (RSS).
 
 CI runs the same build before deploying GitHub Pages.
 
-== Other links
+=== Other links
 
 * Docs: https://openshellorg.github.io/docs/
 * Philosophy: https://openshellorg.github.io/docs/open-shell-org/philosophy.html
 * Changelog: link:CHANGELOG.adoc[]
+
+== Contact
+
+Open Shell Org — openshell@devcentr.org
+
+* Project: https://github.com/openshellorg/opensh.org
+* Site: https://openshellorg.github.io
