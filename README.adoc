@@ -3,19 +3,12 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-ifndef::env-github[]
+[[readme-top]]
+
 image:https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/opensh.org/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/opensh.org/network/members]
 image:https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/opensh.org/stargazers]
 image:https://img.shields.io/github/issues/openshellorg/opensh.org.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/opensh.org/issues]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/openshellorg/opensh.org.svg?style=for-the-badge[Issues]
-endif::[]
 
 = OpenShellOrg GitHub Pages site
 
@@ -29,10 +22,20 @@ link:https://github.com/openshellorg/opensh.org/issues[Request Feature]
 
 Organization landing site for https://openshellorg.github.io[OpenShellOrg].
 
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+
 == Built With
 
-* HTML
-* pnpm build pipeline
+* Markup
+** HTML
+* Tooling
+** link:https://pnpm.io/[image:https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white[pnpm]]
+
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == Getting Started
 
@@ -75,3 +78,7 @@ Open Shell Org — openshell@devcentr.org
 
 * Project: https://github.com/openshellorg/opensh.org
 * Site: https://openshellorg.github.io
+
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
