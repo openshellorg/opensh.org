@@ -3,8 +3,28 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-[[readme-top]]
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/openshellorg/opensh.org/graphs/contributors"><img src="https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/openshellorg/opensh.org/network/members"><img src="https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/openshellorg/opensh.org/stargazers"><img src="https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/openshellorg/opensh.org/issues"><img src="https://img.shields.io/github/issues/openshellorg/opensh.org.svg?style=for-the-badge" alt="Issues"></a>
+<br />
+<h3 align="center">OpenShellOrg GitHub Pages site</h3>
+<p align="center">
+OpenShellOrg GitHub Pages site — organization landing at https://openshellorg.github.io.<br />
+<a href="http://opensh.org/"><strong>Explore the site »</strong></a><br /><br />
+<a href="https://github.com/openshellorg/opensh.org/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/openshellorg/opensh.org/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
 
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/openshellorg/opensh.org.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/opensh.org/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/opensh.org.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/opensh.org/network/members]
 image:https://img.shields.io/github/stars/openshellorg/opensh.org.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/opensh.org/stargazers]
@@ -17,6 +37,7 @@ OpenShellOrg GitHub Pages site — organization landing at https://openshellorg.
 link:http://opensh.org/[Explore the site] ·
 link:https://github.com/openshellorg/opensh.org/issues[Report Bug] ·
 link:https://github.com/openshellorg/opensh.org/issues[Request Feature]
+endif::[]
 
 == About The Project
 
