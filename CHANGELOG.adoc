@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-13
+
+* News: `PlayTime as a shell-boundary cousin` -- argv runner lives in Dev-Centr scriptbook; stance essays on docs.opensh.org; do not move the engine mid-build.
+
 == 2026-07-30
 
 * Prerender architecture diagrams from Mermaid sources in `openshellorg/shell-architecture` via `mmdc` + `@openshellorg/mermaid-svg-css-vars` (`pnpm diagrams`).

@@ -1,0 +1,31 @@
+= PlayTime as a shell-boundary cousin
+:revdate: 2026-08-13
+:description: A document runner that spawns argv without a shell rhymes with OpenShellOrg. It is being built in Dev-Centr scriptbook. We are not moving it.
+
+Dev-Centr is teaching a document to *play*.
+
+Not tangle source (that is their literate-programming track). Play: install this, check that, on *this* computer, without rewriting the file. The engine in the middle picked up a name from the phrase "at play time" -- **PlayTime**.
+
+That engine does something we already preach. It treats an install method as **argv**, not as a bash costume and a pwsh costume and a nu costume hanging on the same hook. It snapshots the host *before* it asks a catalog anything, because "what OS am I?" cannot be an equivalence lookup that requires knowing the OS.
+
+That is shell-boundary work. Entrypoint Dispatch, SOS, structured pipelines -- different layers, same allergy to lying about what process you just started.
+
+.Cookbook, kitchen, waiter
+++++
+<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-layers.svg" width="720" aria-label="CentrMark book, PlayTime stage, Scriptbook app">CentrMark book, PlayTime stage, Scriptbook app</object>
+++++
+
+We wrote the cousin essays on our side so CLI authors do not have to archaeology the Dev-Centr specs:
+
+* link:https://docs.opensh.org/shell-architecture/playtime-at-the-shell-boundary.html[PlayTime at the shell boundary] -- why it sounds like us, why it is not in this org *yet*
+* link:https://docs.opensh.org/shell-architecture/argv-as-execution-currency.html[Argv as execution currency] -- format is not a shell; never ask "MSI or bash?"
+* link:https://docs.opensh.org/shell-architecture/host-identity-contract.html[Host identity as a contract] -- no world `get_os()`; overlays are stickers, not planets
+
+.Aligned, not moved
+++++
+<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-sibling-home.svg" width="720" aria-label="PlayTime stays in the Dev-Centr workshop">PlayTime stays in the Dev-Centr workshop</object>
+++++
+
+We are **not** merging, and we are **not** relocating their kitchen mid-service. PlayTime is being built in `dev-centr/scriptbook`. If it ever moves, argv-spawn and Host Awareness should come along. Their tool catalogs and GUI should not.
+
+Their inward tour: link:https://devcentr.org/news/2026-08-13-intents-not-shell-translation[Intents, not shell translation]. Encyclopedia: link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/abstract-playbooks.html[Abstract playbooks].
