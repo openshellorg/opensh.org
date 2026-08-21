@@ -4,7 +4,7 @@ Prerendered Mermaid figures for opensh.org.
 
 * **Authoritative `.mmd` sources:** https://github.com/openshellorg/shell-architecture[`openshellorg/shell-architecture`] → `docs/modules/ROOT/partials/diagrams/`
 * **Theme:** `theme.json` (concrete Mermaid `themeVariables` for `mmdc`) + `mermaid-config.json`
-* **Build:** `pnpm diagrams` → `mmdc` (`diagrams/puppeteer.json` with `--no-sandbox` for CI) → `@openshellorg/mermaid-svg-css-vars` (`webCompatibility`) → Chromium harden (CDATA `<style>`, drop `height="auto"`) → `assets/diagrams/*.svg`
-* **Embed:** Mermaid 11 may still emit `foreignObject` labels; the site uses `<object type="image/svg+xml">` (not `<img>`) so labels render. Do not embed these as `<img>` — and without CDATA wrapping, Chromium reports SVG "Encoding error" on `#` hex colors in `<style>`.
+* **Build:** Locally, `pnpm diagrams` → `mmdc` (`diagrams/puppeteer.json`) → `@openshellorg/mermaid-svg-css-vars` → Chromium harden (CDATA `<style>`, drop `height="auto"`) → `assets/diagrams/*.svg`. Pages CI ships committed SVGs and only runs `pnpm news`.
+* **Embed:** Mermaid may emit `foreignObject` labels; the site uses `<object type="image/svg+xml">` (not `<img>`). Without CDATA wrapping, Chromium reports SVG "Encoding error" on `#` hex colors in `<style>`.
 
 Locally, keep a sibling checkout of `shell-architecture` (or set `DIAGRAM_SRC`). CI checks it out to `_diagram-src/`.
