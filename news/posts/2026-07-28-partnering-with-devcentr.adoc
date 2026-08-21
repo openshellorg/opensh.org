@@ -16,12 +16,12 @@ We've written that down properly now:
 
 .Official toolchain architecture
 ++++
-<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/toolchain-architecture.svg" width="720" height="420" style="aspect-ratio: 720 / 420" aria-label="Official entrypoint owns pin resolve, install, re-exec, and lifecycle">Official entrypoint owns pin resolve, install, re-exec, and lifecycle</object>
+<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/toolchain-architecture.svg?v=1e12ac3" width="720" height="420" style="aspect-ratio: 720 / 420" aria-label="Official entrypoint owns pin resolve, install, re-exec, and lifecycle">Official entrypoint owns pin resolve, install, re-exec, and lifecycle</object>
 ++++
 
 .Sibling ownership
 ++++
-<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/sibling-ownership.svg" width="720" height="280" style="aspect-ratio: 720 / 280" aria-label="DevCentr lifecycle vs OpenShellOrg entrypoint dispatch">DevCentr lifecycle vs OpenShellOrg entrypoint dispatch</object>
+<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/sibling-ownership.svg?v=1e12ac3" width="720" height="280" style="aspect-ratio: 720 / 280" aria-label="DevCentr lifecycle vs OpenShellOrg entrypoint dispatch">DevCentr lifecycle vs OpenShellOrg entrypoint dispatch</object>
 ++++
 
 We're **not** merging. Product orchestration and industry standards need different issue trackers and contribution norms. We *are* treating each other as the obvious sibling link in footers, docs, and news — because users shouldn't have to archaeology their way to the other half of the argument.
