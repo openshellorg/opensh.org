@@ -49,7 +49,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="${rootPrefix}assets/site.css" />
+    <link rel="stylesheet" href="${rootPrefix}assets/site.css?v=3a337e3" />
   </head>
   <body>
     ${themeToggle}
@@ -84,7 +84,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
         <a href="https://github.com/dlang-supplemental">dlang-supplemental</a>
       </p>
     </footer>
-    <script src="${rootPrefix}assets/theme.js" defer></script>
+    <script src="${rootPrefix}assets/theme.js?v=3a337e3" defer></script>
   </body>
 </html>
 `
