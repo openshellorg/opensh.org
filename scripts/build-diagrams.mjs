@@ -89,7 +89,16 @@ for (const name of SITE_DIAGRAMS) {
   const finalOut = path.join(outDir, `${name}.svg`)
 
   console.log(`mmdc ${name}.mmd`)
-  runMmdc(input, rawOut)
+  try {
+    runMmdc(input, rawOut)
+  } catch (err) {
+    if (existsSync(finalOut)) {
+      console.warn(`mmdc failed for ${name}; hardening committed ${path.relative(root, finalOut)}`)
+      writeFileSync(finalOut, hardenSvgForChromium(readFileSync(finalOut, "utf8")), "utf8")
+      continue
+    }
+    throw err
+  }
 
   const raw = readFileSync(rawOut, "utf8")
   const ready = hardenSvgForChromium(

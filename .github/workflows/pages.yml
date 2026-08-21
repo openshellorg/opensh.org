@@ -36,6 +36,7 @@ jobs:
       - name: Install, build diagrams + news
         run: |
           pnpm install --frozen-lockfile
+          pnpm exec puppeteer browsers install chrome-headless-shell
           pnpm build
           rm -rf node_modules diagrams/.cache _diagram-src
 
