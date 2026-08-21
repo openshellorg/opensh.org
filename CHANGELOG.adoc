@@ -3,6 +3,7 @@
 == 2026-08-21
 
 * Fix homepage diagrams: keep `<object>` embeds (Mermaid `foreignObject`); unstick Pages deploy by giving `mmdc`/`puppeteer` `--no-sandbox` in CI.
+* Harden Mermaid SVGs for Chromium XML (`<style>` CDATA + drop `height="auto"`) so diagrams stop failing with "Encoding error".
 * Fix dark-mode CTA text contrast with dedicated button foreground/background tokens.
 * Add light/dark icon toggle: follows system preference; manual override clears on the next system theme change.
 

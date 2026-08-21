@@ -59,6 +59,16 @@ function runMmdc(input, output) {
   execFileSync(mmdc, args, { cwd: root, stdio: "inherit", shell: process.platform === "win32" })
 }
 
+/** Chromium XML SVG parser: bare `#` hex in <style> → "Encoding error"; height="auto" is invalid. */
+function hardenSvgForChromium(svg) {
+  let out = svg.replace(/<style>([\s\S]*?)<\/style>/, (match, inner) => {
+    if (inner.includes("CDATA")) return match
+    return `<style><![CDATA[${inner}]]></style>`
+  })
+  out = out.replace(/\sheight="auto"/g, "")
+  return out
+}
+
 const diagramSrc = resolveDiagramSrc()
 const themeVariables = JSON.parse(readFileSync(themePath, "utf8"))
 mkdirSync(outDir, { recursive: true })
@@ -82,12 +92,14 @@ for (const name of SITE_DIAGRAMS) {
   runMmdc(input, rawOut)
 
   const raw = readFileSync(rawOut, "utf8")
-  const ready = prepareMermaidSvgForWeb(raw, {
-    themeVariables,
-    cssVariables: true,
-    webCompatibility: true,
-    prefix: "--mermaid-",
-  })
+  const ready = hardenSvgForChromium(
+    prepareMermaidSvgForWeb(raw, {
+      themeVariables,
+      cssVariables: true,
+      webCompatibility: true,
+      prefix: "--mermaid-",
+    }),
+  )
   writeFileSync(finalOut, ready, "utf8")
   console.log(`wrote ${path.relative(root, finalOut)}`)
 }
