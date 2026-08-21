@@ -8,6 +8,12 @@
       name="description"
       content="Standards and tooling for better shells and CLIs — SOS certification and structured shell architecture."
     />
+    <script>
+      (function () {
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
     <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +25,15 @@
     <link rel="alternate" type="application/rss+xml" title="OpenShellOrg News" href="news/feed.xml" />
   </head>
   <body>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+      </svg>
+    </button>
     <main class="shell">
       <section class="hero">
         <img class="mark" src="assets/logo-mark.svg" width="256" height="256" alt="OpenShellOrg" />
@@ -52,6 +67,7 @@
             data="assets/diagrams/toolchain-architecture.svg"
             width="720"
             height="420"
+            style="aspect-ratio: 720 / 420"
             aria-label="Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade"
           >
             Official entrypoint owns pin resolve, install, re-exec, health, repair, and upgrade
@@ -67,6 +83,7 @@
             data="assets/diagrams/sibling-ownership.svg"
             width="720"
             height="280"
+            style="aspect-ratio: 720 / 280"
             aria-label="DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch"
           >
             DevCentr owns lifecycle philosophy; OpenShellOrg owns entrypoint dispatch
@@ -101,5 +118,6 @@
         <a href="https://github.com/dlang-supplemental">dlang-supplemental</a>
       </p>
     </footer>
+    <script src="assets/theme.js" defer></script>
   </body>
 </html>

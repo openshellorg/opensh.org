@@ -18,6 +18,16 @@ function escapeHtml(s) {
     .replaceAll('"', "&quot;")
 }
 
+const themeToggle = `<button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+      </svg>
+    </button>`
+
 function layout({ title, description, active, body, rootPrefix = "../" }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -26,6 +36,12 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
+    <script>
+      (function () {
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
     <link rel="icon" href="${rootPrefix}assets/logo-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +52,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
     <link rel="stylesheet" href="${rootPrefix}assets/site.css" />
   </head>
   <body>
+    ${themeToggle}
     <nav class="topnav" aria-label="Site">
       <a class="brand" href="${rootPrefix}index.html">
         <img src="${rootPrefix}assets/logo-mark.svg" width="32" height="32" alt="" />
@@ -67,6 +84,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
         <a href="https://github.com/dlang-supplemental">dlang-supplemental</a>
       </p>
     </footer>
+    <script src="${rootPrefix}assets/theme.js" defer></script>
   </body>
 </html>
 `

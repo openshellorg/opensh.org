@@ -18,6 +18,7 @@ const root = path.resolve(__dirname, "..")
 const outDir = path.join(root, "assets", "diagrams")
 const themePath = path.join(root, "diagrams", "theme.json")
 const configPath = path.join(root, "diagrams", "mermaid-config.json")
+const puppeteerPath = path.join(root, "diagrams", "puppeteer.json")
 
 const SITE_DIAGRAMS = ["toolchain-architecture", "sibling-ownership"]
 
@@ -49,6 +50,8 @@ function runMmdc(input, output) {
     output,
     "-c",
     configPath,
+    "-p",
+    puppeteerPath,
     "-b",
     "transparent",
     "-q",

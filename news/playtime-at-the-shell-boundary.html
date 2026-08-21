@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>We&amp;#8217;re partnering with DevCentr (on purpose) · OpenShellOrg</title>
-    <meta name="description" content="OpenShellOrg and DevCentr are aligning hard on shells, entrypoints, and toolchain honesty — without merging into one mega-org." />
+    <title>PlayTime as a shell-boundary cousin · OpenShellOrg</title>
+    <meta name="description" content="A document runner that spawns argv without a shell rhymes with OpenShellOrg. It is being built in Dev-Centr scriptbook. We are not moving it." />
     <script>
       (function () {
         var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -46,43 +46,46 @@
     <main class="page article">
       <a class="back" href="./">← News</a>
       <header>
-        <time datetime="2026-07-28">July 28, 2026</time>
-        <h1>We&amp;#8217;re partnering with DevCentr (on purpose)</h1>
-        <p class="summary">OpenShellOrg and DevCentr are aligning hard on shells, entrypoints, and toolchain honesty — without merging into one mega-org.</p>
+        <time datetime="2026-08-13">August 13, 2026</time>
+        <h1>PlayTime as a shell-boundary cousin</h1>
+        <p class="summary">A document runner that spawns argv without a shell rhymes with OpenShellOrg. It is being built in Dev-Centr scriptbook. We are not moving it.</p>
       </header>
       <div class="body">
         <div class="paragraph">
-<p>If you&#8217;ve been watching both orgs and thinking “wait, these people keep finishing each other&#8217;s sentences,” yeah. That&#8217;s not an accident.</p>
+<p>Dev-Centr is teaching a document to <strong>play</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>OpenShellOrg</strong> is here for shells and CLIs: SOS certification, structured pipelines, <code>nu-require</code>, progressive help, and the boring-but-sacred rule that the process you launched should either be the right one or <strong>stop</strong>. <strong>DevCentr</strong> is here for the practitioner side: environments, orchestration, and the full <strong>Toolchain Management</strong> story — pin, health, repair, upgrade as something an official entrypoint owns, not a tribal afterthought you discover after a native-module ABI meltdown.</p>
+<p>Not tangle source (that is their literate-programming track). Play: install this, check that, on <strong>this</strong> computer, without rewriting the file. The engine in the middle picked up a name from the phrase "at play time"&#8201;&#8212;&#8201;<strong>PlayTime</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Same enemy. Different altitudes.</p>
+<p>That engine does something we already preach. It treats an install method as <strong>argv</strong>, not as a bash costume and a pwsh costume and a nu costume hanging on the same hook. It snapshots the host <strong>before</strong> it asks a catalog anything, because "what OS am I?" cannot be an equivalence lookup that requires knowing the OS.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ve written that down properly now:</p>
+<p>That is shell-boundary work. Entrypoint Dispatch, SOS, structured pipelines&#8201;&#8212;&#8201;different layers, same allergy to lying about what process you just started.</p>
+</div>
+<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-layers.svg" width="720" aria-label="CentrMark book, PlayTime stage, Scriptbook app">CentrMark book, PlayTime stage, Scriptbook app</object>
+<div class="paragraph">
+<p>We wrote the cousin essays on our side so CLI authors do not have to archaeology the Dev-Centr specs:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Entrypoint Dispatch lives in shell-architecture — auto-install and re-exec the right host/version at the shell boundary.</p>
+<p><a href="https://docs.opensh.org/shell-architecture/playtime-at-the-shell-boundary.html">PlayTime at the shell boundary</a>&#8201;&#8212;&#8201;why it sounds like us, why it is not in this org <strong>yet</strong></p>
 </li>
 <li>
-<p>Toolchain Management Pattern stays canonical on the DevCentr docs side.</p>
+<p><a href="https://docs.opensh.org/shell-architecture/argv-as-execution-currency.html">Argv as execution currency</a>&#8201;&#8212;&#8201;format is not a shell; never ask "MSI or bash?"</p>
 </li>
 <li>
-<p>Cross-links both ways so nobody has to guess which org “owns the essay.”</p>
+<p><a href="https://docs.opensh.org/shell-architecture/host-identity-contract.html">Host identity as a contract</a>&#8201;&#8212;&#8201;no world <code>get_os()</code>; overlays are stickers, not planets</p>
 </li>
 </ul>
 </div>
-<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/toolchain-architecture.svg" width="720" height="420" style="aspect-ratio: 720 / 420" aria-label="Official entrypoint owns pin resolve, install, re-exec, and lifecycle">Official entrypoint owns pin resolve, install, re-exec, and lifecycle</object>
-<object class="diagram-svg" type="image/svg+xml" data="../assets/diagrams/sibling-ownership.svg" width="720" height="280" style="aspect-ratio: 720 / 280" aria-label="DevCentr lifecycle vs OpenShellOrg entrypoint dispatch">DevCentr lifecycle vs OpenShellOrg entrypoint dispatch</object>
+<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-sibling-home.svg" width="720" aria-label="PlayTime stays in the Dev-Centr workshop">PlayTime stays in the Dev-Centr workshop</object>
 <div class="paragraph">
-<p>We&#8217;re <strong>not</strong> merging. Product orchestration and industry standards need different issue trackers and contribution norms. We <strong>are</strong> treating each other as the obvious sibling link in footers, docs, and news — because users shouldn&#8217;t have to archaeology their way to the other half of the argument.</p>
+<p>We are <strong>not</strong> merging, and we are <strong>not</strong> relocating their kitchen mid-service. PlayTime is being built in <code>dev-centr/scriptbook</code>. If it ever moves, argv-spawn and Host Awareness should come along. Their tool catalogs and GUI should not.</p>
 </div>
 <div class="paragraph">
-<p>Come hang out: <a href="https://devcentr.org">devcentr.org</a>, <a href="https://docs.devcentr.org">docs.devcentr.org</a>, and our own <a href="https://openshellorg.github.io/docs/">docs hub</a>. If you build CLIs, start with honesty at <code>argv[0]</code>. If you build environments, start with a control plane that doesn&#8217;t pretend <code>engines</code> is a vibe.</p>
+<p>Their inward tour: <a href="https://devcentr.org/news/2026-08-13-intents-not-shell-translation">Intents, not shell translation</a>. Encyclopedia: <a href="https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/abstract-playbooks.html">Abstract playbooks</a>.</p>
 </div>
       </div>
     </main>

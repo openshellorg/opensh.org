@@ -5,6 +5,13 @@
     <link>https://openshellorg.github.io/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
     <item>
+      <title>PlayTime as a shell-boundary cousin</title>
+      <link>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</link>
+      <guid>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A document runner that spawns argv without a shell rhymes with OpenShellOrg. It is being built in Dev-Centr scriptbook. We are not moving it.</description>
+    </item>
+    <item>
       <title>We&amp;#8217;re partnering with DevCentr (on purpose)</title>
       <link>https://openshellorg.github.io/news/partnering-with-devcentr.html</link>
       <guid>https://openshellorg.github.io/news/partnering-with-devcentr.html</guid>
