@@ -1,7 +1,13 @@
 = Changelog
 
+== 2026-08-30 — Partner footer single entry points
+
+* Site and news footers: one homepage link per org; drop OSO Docs / DevCentr Docs / GitHub org duplicates from the related strip.
+
 == 2026-08-21
 
+* Rewrite homepage from docs (philosophy, thesis, entrypoint honesty, DevCentr siblinghood) into plainer visitor language.
+* Replace Mermaid blueprint diagrams with scene illustrations and web-sized labels.
 * Fix homepage diagrams: keep `<object>` embeds (Mermaid `foreignObject`); unstick Pages deploy by giving `mmdc`/`puppeteer` `--no-sandbox` in CI.
 * Harden Mermaid SVGs for Chromium XML (`<style>` CDATA + drop `height="auto"`) so diagrams stop failing with "Encoding error".
 * Pages CI ships committed diagrams (`pnpm news` only) so puppeteer/chrome downloads cannot block deploys; regenerate with `pnpm diagrams` locally when `.mmd` sources change.
