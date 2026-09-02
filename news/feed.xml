@@ -5,6 +5,13 @@
     <link>https://openshellorg.github.io/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
     <item>
+      <title>Tool runs leave the scrollback</title>
+      <link>https://openshellorg.github.io/news/tool-runs-leave-the-scrollback.html</link>
+      <guid>https://openshellorg.github.io/news/tool-runs-leave-the-scrollback.html</guid>
+      <pubDate>Wed, 02 Sep 2026 12:00:00 GMT</pubDate>
+      <description>OpenShellOrg published architecture for compilers as structured Tool Runs — shared daemon, embeddable library, and per-command channels — instead of treating stderr as the product.</description>
+    </item>
+    <item>
       <title>PlayTime as a shell-boundary cousin</title>
       <link>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</link>
       <guid>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</guid>

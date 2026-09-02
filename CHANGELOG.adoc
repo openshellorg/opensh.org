@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-02 — Tool runs leave the scrollback
+
+* News: compilers as structured Tool Runs (bus / daemon / embed library) + command channels; links to shell-architecture and HCI face.
+
 == 2026-08-30 — Partner footer single entry points
 
 * Site and news footers: one homepage link per org; drop OSO Docs / DevCentr Docs / GitHub org duplicates from the related strip.

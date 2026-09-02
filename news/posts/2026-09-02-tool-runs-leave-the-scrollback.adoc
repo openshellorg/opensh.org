@@ -1,0 +1,15 @@
+= Tool runs leave the scrollback
+:revdate: 2026-09-02
+:description: OpenShellOrg published architecture for compilers as structured Tool Runs — shared daemon, embeddable library, and per-command channels — instead of treating stderr as the product.
+
+Compiler output still arrives the way it did when the terminal was the only UI: jargon-first text on stderr, interleaved into scrollback, unfriendly to agents that may fire dozens of builds in a row.
+
+OpenShellOrg published the architecture that treats each compile (and other long tools) as a **Tool Run** on a shared bus. A daemon indexes live and finished runs. An embeddable library lets agent hosts mount the same widgets on a timeline without opening a stack of OS windows. Wrappers speak structured diagnostics (SARIF / tooling JSON) that already exist — the plan does not wait on rewriting every frontend.
+
+Hosts keep **stdout**, **stderr**, and later **diagnostics** as separate channels with a switcher, so the display stops pretending the streams were one. Structured shell results can stay retro-interactive after the command exits; compilers take the Tool Run path instead.
+
+Sibling orgs are named on purpose: HCI Nerdz for programmer-POV wording and attention patterns, Desktop Tooling for optional OS-level flash or tray helpers, Dev-Centr for agent harness embedding. The protocol stays in OpenShellOrg.
+
+* Docs: link:https://docs.opensh.org/shell-architecture/tool-run-diagnostics.html[Tool runs and diagnostics] · link:https://docs.opensh.org/shell-architecture/command-channels.html[Command channels]
+* HCI face: link:https://hci-nerdz.github.io/docs/hci-nerdz/programmer-pov-diagnostics.html[Programmer-POV diagnostics]
+* Plan seed: link:https://github.com/openshellorg/project-plans/blob/main/seeds/2026-09-02%20-%20tool-runs-and-command-channels.md[2026-09-02 tool runs]

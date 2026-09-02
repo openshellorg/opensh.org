@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tool runs leave the scrollback · OpenShellOrg</title>
+    <meta name="description" content="OpenShellOrg published architecture for compilers as structured Tool Runs — shared daemon, embeddable library, and per-command channels — instead of treating stderr as the product." />
+    <script>
+      (function () {
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="../assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/site.css?v=3a337e3" />
+  </head>
+  <body>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+      </svg>
+    </button>
+    <nav class="topnav" aria-label="Site">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo-mark.svg" width="32" height="32" alt="" />
+        OpenShellOrg
+      </a>
+      <div class="links">
+        <a href="../news/" aria-current="page">News</a>
+        <a href="https://openshellorg.github.io/docs/">Docs</a>
+        <a href="https://openshellorg.github.io/docs/open-shell-org/philosophy.html">Philosophy</a>
+        <a href="https://github.com/openshellorg">GitHub</a>
+      </div>
+    </nav>
+    
+    <main class="page article">
+      <a class="back" href="./">← News</a>
+      <header>
+        <time datetime="2026-09-02">September 2, 2026</time>
+        <h1>Tool runs leave the scrollback</h1>
+        <p class="summary">OpenShellOrg published architecture for compilers as structured Tool Runs — shared daemon, embeddable library, and per-command channels — instead of treating stderr as the product.</p>
+      </header>
+      <div class="body">
+        <div class="paragraph">
+<p>Compiler output still arrives the way it did when the terminal was the only UI: jargon-first text on stderr, interleaved into scrollback, unfriendly to agents that may fire dozens of builds in a row.</p>
+</div>
+<div class="paragraph">
+<p>OpenShellOrg published the architecture that treats each compile (and other long tools) as a <strong>Tool Run</strong> on a shared bus. A daemon indexes live and finished runs. An embeddable library lets agent hosts mount the same widgets on a timeline without opening a stack of OS windows. Wrappers speak structured diagnostics (SARIF / tooling JSON) that already exist — the plan does not wait on rewriting every frontend.</p>
+</div>
+<div class="paragraph">
+<p>Hosts keep <strong>stdout</strong>, <strong>stderr</strong>, and later <strong>diagnostics</strong> as separate channels with a switcher, so the display stops pretending the streams were one. Structured shell results can stay retro-interactive after the command exits; compilers take the Tool Run path instead.</p>
+</div>
+<div class="paragraph">
+<p>Sibling orgs are named on purpose: HCI Nerdz for programmer-POV wording and attention patterns, Desktop Tooling for optional OS-level flash or tray helpers, Dev-Centr for agent harness embedding. The protocol stays in OpenShellOrg.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Docs: <a href="https://docs.opensh.org/shell-architecture/tool-run-diagnostics.html">Tool runs and diagnostics</a> · <a href="https://docs.opensh.org/shell-architecture/command-channels.html">Command channels</a></p>
+</li>
+<li>
+<p>HCI face: <a href="https://hci-nerdz.github.io/docs/hci-nerdz/programmer-pov-diagnostics.html">Programmer-POV diagnostics</a></p>
+</li>
+<li>
+<p>Plan seed: <a href="https://github.com/openshellorg/project-plans/blob/main/seeds/2026-09-02%20-%20tool-runs-and-command-channels.md">2026-09-02 tool runs</a></p>
+</li>
+</ul>
+</div>
+      </div>
+    </main>
+    <footer class="site-footer" aria-label="Site footer">
+      <p class="footer-related-label">Related projects</p>
+      <p class="footer-related-links">
+        <a href="https://openshellorg.github.io/">OpenShellOrg</a>
+        ·
+        <a href="https://devcentr.org">DevCentr</a>
+        ·
+        <a href="https://github.com/dlang-supplemental">dlang-supplemental</a>
+      </p>
+    </footer>
+    <script src="../assets/theme.js?v=3a337e3" defer></script>
+  </body>
+</html>
