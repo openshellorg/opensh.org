@@ -603,6 +603,16 @@ h1 {
   color: var(--ink);
 }
 
+.catalog-title {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.catalog-title a {
+  font-weight: inherit;
+}
+
 .catalog a:hover {
   color: var(--link-hover);
 }
