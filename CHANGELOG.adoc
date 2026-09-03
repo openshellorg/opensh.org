@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-02 — Homepage without the charts
+
+* Rewrite homepage for cold visitors: plain pitch, Docs-first CTAs, three bets, living catalog, DevCentr sibling note — no architecture diagrams on the landing page.
+
 == 2026-09-02 — Tool runs leave the scrollback
 
 * News: compilers as structured Tool Runs (bus / daemon / embed library) + command channels; links to shell-architecture and HCI face.
