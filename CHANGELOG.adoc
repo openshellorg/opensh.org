@@ -3,6 +3,7 @@
 == 2026-09-02 — Homepage without the charts
 
 * Rewrite homepage for cold visitors: plain pitch, Docs-first CTAs, three bets, living catalog, DevCentr sibling note — no architecture diagrams on the landing page.
+* Sibling section: say what the relationship *is* (workshop next to DevCentr), not what it isn’t.
 
 == 2026-09-02 — Tool runs leave the scrollback
 
