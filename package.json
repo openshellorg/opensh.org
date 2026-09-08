@@ -4,13 +4,17 @@
   "type": "module",
   "packageManager": "pnpm@10.28.2",
   "scripts": {
-    "build": "pnpm run diagrams && node scripts/build-news.mjs",
+    "build": "pnpm test && node scripts/build-news.mjs",
     "news": "node scripts/build-news.mjs",
-    "diagrams": "node scripts/build-diagrams.mjs",
-    "diagrams:check": "node scripts/build-diagrams.mjs --check"
+    "diagrams": "node scripts/build-diagrams.mjs && node scripts/sync-playtime-diagrams.mjs --sync",
+    "diagrams:check": "node scripts/build-diagrams.mjs --check && node scripts/sync-playtime-diagrams.mjs",
+    "playtime:sync": "node scripts/sync-playtime-diagrams.mjs --sync",
+    "playtime:check": "node scripts/sync-playtime-diagrams.mjs",
+    "test": "node scripts/build-news.mjs && pnpm diagrams:check && node scripts/validate-site.mjs"
   },
   "devDependencies": {
     "@asciidoctor/core": "^3.0.4",
-    "@dev-centr/themed-svg": "0.1.1"
+    "@dev-centr/themed-svg": "0.1.1",
+    "@xmldom/xmldom": "0.9.12"
   }
 }

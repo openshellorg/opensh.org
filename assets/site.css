@@ -18,6 +18,16 @@
   --themed-svg-openshell-diagram-color-text-primary: #1a1a1a;
   --themed-svg-openshell-diagram-color-border-primary: #1f3a2e;
   --themed-svg-openshell-diagram-color-edge: #2c2c2c;
+  --themed-svg-diagram-color-canvas: var(--diagram-frame);
+  --themed-svg-diagram-color-surface-primary: var(--themed-svg-openshell-diagram-color-surface-primary);
+  --themed-svg-diagram-color-surface-secondary: var(--themed-svg-openshell-diagram-color-surface-secondary);
+  --themed-svg-diagram-color-text-primary: var(--themed-svg-openshell-diagram-color-text-primary);
+  --themed-svg-diagram-color-border-primary: var(--themed-svg-openshell-diagram-color-border-primary);
+  --themed-svg-diagram-color-edge: var(--themed-svg-openshell-diagram-color-edge);
+  --themed-svg-diagram-color-accent-primary: #286646;
+  --themed-svg-diagram-color-accent-on-primary: #ffffff;
+  --themed-svg-diagram-color-status-warning: #fff5d6;
+  --themed-svg-diagram-color-status-warning-border: #9a6700;
 }
 
 html[data-theme="dark"] {
@@ -37,6 +47,10 @@ html[data-theme="dark"] {
   --themed-svg-openshell-diagram-color-text-primary: #f7f3e8;
   --themed-svg-openshell-diagram-color-border-primary: #7dcea0;
   --themed-svg-openshell-diagram-color-edge: #d1d5db;
+  --themed-svg-diagram-color-accent-primary: #7dcea0;
+  --themed-svg-diagram-color-accent-on-primary: #102118;
+  --themed-svg-diagram-color-status-warning: #4a3c17;
+  --themed-svg-diagram-color-status-warning-border: #f0c75e;
 }
 
 * {

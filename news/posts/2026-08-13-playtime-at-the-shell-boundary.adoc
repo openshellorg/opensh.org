@@ -21,7 +21,8 @@ We wrote the cousin essays on our side so CLI authors do not have to archaeology
 * link:https://docs.opensh.org/shell-architecture/host-identity-contract.html[Host identity as a contract] -- no world `get_os()`; overlays are stickers, not planets
 
 .Aligned, not moved
-image::../assets/illustrations/playtime-sibling-home.svg[PlayTime stays in the Dev-Centr workshop,width=720]
+[.diagram-svg]
+image::../assets/diagrams/playtime-sibling-home.svg[PlayTime stays in the Dev-Centr workshop,width=720]
 
 We are **not** merging, and we are **not** relocating their kitchen mid-service. PlayTime is being built in `dev-centr/scriptbook`. If it ever moves, argv-spawn and Host Awareness should come along. Their tool catalogs and GUI should not.
 

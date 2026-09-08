@@ -32,11 +32,10 @@ jobs:
           node-version: "22"
           cache: "pnpm"
 
-      - name: Install and build news
+      - name: Install, validate, and build site
         run: |
           pnpm install --frozen-lockfile
-          pnpm diagrams -- --check
-          pnpm news
+          pnpm build
           rm -rf node_modules
 
       - uses: actions/upload-pages-artifact@v3
