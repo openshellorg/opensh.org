@@ -11,9 +11,8 @@ That engine does something we already preach. It treats an install method as **a
 That is shell-boundary work. Entrypoint Dispatch, SOS, structured pipelines -- different layers, same allergy to lying about what process you just started.
 
 .Cookbook, kitchen, waiter
-++++
-<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-layers.svg" width="720" aria-label="CentrMark book, PlayTime stage, Scriptbook app">CentrMark book, PlayTime stage, Scriptbook app</object>
-++++
+[.diagram-svg]
+image::../assets/diagrams/playtime-layers.svg[alt="CentrMark book, PlayTime stage, Scriptbook app",width=720]
 
 We wrote the cousin essays on our side so CLI authors do not have to archaeology the Dev-Centr specs:
 
@@ -22,9 +21,7 @@ We wrote the cousin essays on our side so CLI authors do not have to archaeology
 * link:https://docs.opensh.org/shell-architecture/host-identity-contract.html[Host identity as a contract] -- no world `get_os()`; overlays are stickers, not planets
 
 .Aligned, not moved
-++++
-<object class="diagram-svg" type="image/svg+xml" data="../assets/illustrations/playtime-sibling-home.svg" width="720" aria-label="PlayTime stays in the Dev-Centr workshop">PlayTime stays in the Dev-Centr workshop</object>
-++++
+image::../assets/illustrations/playtime-sibling-home.svg[PlayTime stays in the Dev-Centr workshop,width=720]
 
 We are **not** merging, and we are **not** relocating their kitchen mid-service. PlayTime is being built in `dev-centr/scriptbook`. If it ever moves, argv-spawn and Host Awareness should come along. Their tool catalogs and GUI should not.
 

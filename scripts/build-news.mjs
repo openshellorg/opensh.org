@@ -77,6 +77,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
       </p>
     </footer>
     <script src="${rootPrefix}assets/theme.js?v=3a337e3" defer></script>
+    <script src="${rootPrefix}assets/themed-svg.js?v=1" type="module"></script>
   </body>
 </html>
 `

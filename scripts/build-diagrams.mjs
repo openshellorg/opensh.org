@@ -1,32 +1,36 @@
 /**
- * Prerender Mermaid `.mmd` → web-ready SVG via mmdc + @openshellorg/mermaid-svg-css-vars.
- *
- * Authoritative sources live in openshellorg/shell-architecture
- * (docs/modules/ROOT/partials/diagrams/). This script resolves that tree from:
- *   1. DIAGRAM_SRC env
- *   2. ../shell-architecture/... (local sibling checkout)
- *   3. _diagram-src/... (CI checkout path)
+ * Synchronize committed Themed SVG artifacts from authoritative shell-architecture.
  */
-import { execFileSync } from "node:child_process"
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import { prepareMermaidSvgForWeb } from "@openshellorg/mermaid-svg-css-vars"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, "..")
 const outDir = path.join(root, "assets", "diagrams")
-const themePath = path.join(root, "diagrams", "theme.json")
-const configPath = path.join(root, "diagrams", "mermaid-config.json")
-const puppeteerPath = path.join(root, "diagrams", "puppeteer.json")
-
-const SITE_DIAGRAMS = ["toolchain-architecture", "sibling-ownership"]
+const illustrationsDir = path.join(root, "assets", "illustrations")
+const check = process.argv.includes("--check")
+const diagrams = [
+  "declaration-without-dispatch",
+  "honest-entrypoint-dispatch",
+  "sibling-ownership",
+  "toolchain-architecture",
+  "playtime-argv",
+  "playtime-overlays",
+  "playtime-venn",
+  "playtime-bootstrap",
+  "playtime-growth-ratchet",
+  "playtime-facets-not-lattice",
+  "playtime-bind-flow",
+  "playtime-layers",
+]
+const preservedFixedIllustrations = diagrams.filter((name) => name.startsWith("playtime-"))
 
 function resolveDiagramSrc() {
   const candidates = [
     process.env.DIAGRAM_SRC,
-    path.resolve(root, "..", "shell-architecture", "docs", "modules", "ROOT", "partials", "diagrams"),
-    path.resolve(root, "_diagram-src", "docs", "modules", "ROOT", "partials", "diagrams"),
+    path.resolve(root, "..", "shell-architecture", "docs", "modules", "ROOT", "images"),
+    path.resolve(root, "_diagram-src", "docs", "modules", "ROOT", "images"),
   ].filter(Boolean)
   for (const c of candidates) {
     if (existsSync(c)) return c
@@ -36,79 +40,29 @@ function resolveDiagramSrc() {
   )
 }
 
-function runMmdc(input, output) {
-  const mmdc = path.join(
-    root,
-    "node_modules",
-    ".bin",
-    process.platform === "win32" ? "mmdc.cmd" : "mmdc",
-  )
-  const args = [
-    "-i",
-    input,
-    "-o",
-    output,
-    "-c",
-    configPath,
-    "-p",
-    puppeteerPath,
-    "-b",
-    "transparent",
-    "-q",
-  ]
-  execFileSync(mmdc, args, { cwd: root, stdio: "inherit", shell: process.platform === "win32" })
-}
-
-/** Chromium XML SVG parser: bare `#` hex in <style> → "Encoding error"; height="auto" is invalid. */
-function hardenSvgForChromium(svg) {
-  let out = svg.replace(/<style>([\s\S]*?)<\/style>/, (match, inner) => {
-    if (inner.includes("CDATA")) return match
-    return `<style><![CDATA[${inner}]]></style>`
-  })
-  out = out.replace(/\sheight="auto"/g, "")
-  return out
-}
-
 const diagramSrc = resolveDiagramSrc()
-const themeVariables = JSON.parse(readFileSync(themePath, "utf8"))
 mkdirSync(outDir, { recursive: true })
-mkdirSync(path.join(root, "diagrams", ".cache"), { recursive: true })
-
-const available = new Set(
-  readdirSync(diagramSrc)
-    .filter((f) => f.endsWith(".mmd"))
-    .map((f) => f.replace(/\.mmd$/i, "")),
-)
-
-for (const name of SITE_DIAGRAMS) {
-  if (!available.has(name)) {
-    throw new Error(`Missing ${name}.mmd in ${diagramSrc}`)
-  }
-  const input = path.join(diagramSrc, `${name}.mmd`)
-  const rawOut = path.join(root, "diagrams", ".cache", `${name}.raw.svg`)
-  const finalOut = path.join(outDir, `${name}.svg`)
-
-  console.log(`mmdc ${name}.mmd`)
-  try {
-    runMmdc(input, rawOut)
-  } catch (err) {
-    if (existsSync(finalOut)) {
-      console.warn(`mmdc failed for ${name}; hardening committed ${path.relative(root, finalOut)}`)
-      writeFileSync(finalOut, hardenSvgForChromium(readFileSync(finalOut, "utf8")), "utf8")
-      continue
+mkdirSync(illustrationsDir, { recursive: true })
+let stale = false
+function syncFile(source, target) {
+  if (!existsSync(source)) throw new Error(`Missing canonical artifact ${source}`)
+  if (check) {
+    if (!existsSync(target) || readFileSync(source, "utf8") !== readFileSync(target, "utf8")) {
+      console.error(`stale ${path.relative(root, target)}`)
+      stale = true
     }
-    throw err
+  } else {
+    copyFileSync(source, target)
+    console.log(`copied ${path.relative(root, target)}`)
   }
-
-  const raw = readFileSync(rawOut, "utf8")
-  const ready = hardenSvgForChromium(
-    prepareMermaidSvgForWeb(raw, {
-      themeVariables,
-      cssVariables: true,
-      webCompatibility: true,
-      prefix: "--mermaid-",
-    }),
-  )
-  writeFileSync(finalOut, ready, "utf8")
-  console.log(`wrote ${path.relative(root, finalOut)}`)
 }
+
+for (const name of diagrams) {
+  for (const suffix of [".svg", ".host.svg"]) {
+    syncFile(path.join(diagramSrc, `${name}${suffix}`), path.join(outDir, `${name}${suffix}`))
+  }
+}
+for (const name of preservedFixedIllustrations) {
+  syncFile(path.join(diagramSrc, `${name}.fixed.svg`), path.join(illustrationsDir, `${name}.svg`))
+}
+if (stale) process.exitCode = 3

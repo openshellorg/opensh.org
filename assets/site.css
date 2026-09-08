@@ -13,29 +13,11 @@
   --body-prose: #243447;
   --diagram-frame: #f7fafc;
 
-  /* Mermaid-prerendered SVGs (host override when SVG is inlined; <object> uses fallbacks) */
-  --mermaid-primaryColor: #d6f4f8;
-  --mermaid-primaryTextColor: var(--ink);
-  --mermaid-primaryBorderColor: #0a7a8a;
-  --mermaid-secondaryColor: #e8f5ee;
-  --mermaid-secondaryTextColor: var(--ink);
-  --mermaid-secondaryBorderColor: #1a7a4c;
-  --mermaid-tertiaryColor: #f7fafc;
-  --mermaid-tertiaryTextColor: var(--muted);
-  --mermaid-lineColor: #5a718c;
-  --mermaid-textColor: var(--ink);
-  --mermaid-mainBkg: #d6f4f8;
-  --mermaid-nodeBorder: #0a7a8a;
-  --mermaid-clusterBkg: #e8f7fa;
-  --mermaid-clusterBorder: #0a7a8a;
-  --mermaid-titleColor: var(--ink);
-  --mermaid-edgeLabelBackground: #f7fafc;
-  --mermaid-actorBkg: #d6f4f8;
-  --mermaid-actorBorder: #0a7a8a;
-  --mermaid-actorTextColor: var(--ink);
-  --mermaid-noteBkgColor: #e8f5ee;
-  --mermaid-noteTextColor: var(--ink);
-  --mermaid-noteBorderColor: #1a7a4c;
+  --themed-svg-openshell-diagram-color-surface-primary: #e8f0ea;
+  --themed-svg-openshell-diagram-color-surface-secondary: #f7f3e8;
+  --themed-svg-openshell-diagram-color-text-primary: #1a1a1a;
+  --themed-svg-openshell-diagram-color-border-primary: #1f3a2e;
+  --themed-svg-openshell-diagram-color-edge: #2c2c2c;
 }
 
 html[data-theme="dark"] {
@@ -50,28 +32,11 @@ html[data-theme="dark"] {
   --btn-secondary-border: rgba(232, 238, 247, 0.32);
   --body-prose: #c5d0de;
   --diagram-frame: #f7fafc;
-  --mermaid-primaryColor: #1a2430;
-  --mermaid-primaryTextColor: var(--ink);
-  --mermaid-primaryBorderColor: #00d2ff;
-  --mermaid-secondaryColor: #143028;
-  --mermaid-secondaryTextColor: var(--ink);
-  --mermaid-secondaryBorderColor: #3dd68c;
-  --mermaid-tertiaryColor: #121a24;
-  --mermaid-tertiaryTextColor: var(--muted);
-  --mermaid-lineColor: #8a9bb0;
-  --mermaid-textColor: var(--ink);
-  --mermaid-mainBkg: #1a2430;
-  --mermaid-nodeBorder: #00d2ff;
-  --mermaid-clusterBkg: #121a24;
-  --mermaid-clusterBorder: #00d2ff;
-  --mermaid-titleColor: var(--ink);
-  --mermaid-edgeLabelBackground: #121a24;
-  --mermaid-actorBkg: #1a2430;
-  --mermaid-actorBorder: #00d2ff;
-  --mermaid-actorTextColor: var(--ink);
-  --mermaid-noteBkgColor: #143028;
-  --mermaid-noteTextColor: var(--ink);
-  --mermaid-noteBorderColor: #3dd68c;
+  --themed-svg-openshell-diagram-color-surface-primary: #294438;
+  --themed-svg-openshell-diagram-color-surface-secondary: #332f27;
+  --themed-svg-openshell-diagram-color-text-primary: #f7f3e8;
+  --themed-svg-openshell-diagram-color-border-primary: #7dcea0;
+  --themed-svg-openshell-diagram-color-edge: #d1d5db;
 }
 
 * {
@@ -467,24 +432,18 @@ h1 {
 }
 
 .diagram-figure img,
-.diagram-figure object.diagram-svg,
-.diagram-figure .diagram-svg {
+.imageblock.diagram-svg img,
+.imageblock.diagram-svg themed-svg {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 0.75rem;
   border: 1px solid var(--rule);
-  /* Object/img SVGs do not inherit host theme vars; keep a light reading surface */
   background: var(--diagram-frame);
 }
 
-/* <object> needs an explicit aspect-ratio (set inline) — height:auto alone collapses */
-.diagram-figure object.diagram-svg {
-  min-height: 14rem;
-}
-
-.diagram-figure img.diagram-svg {
-  min-height: 12rem;
+.imageblock.diagram-svg {
+  margin: 2rem 0;
 }
 
 

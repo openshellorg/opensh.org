@@ -1,10 +1,10 @@
 = Site diagrams
 
-Prerendered Mermaid figures for opensh.org.
+Committed Themed SVG figures synchronized to opensh.org.
 
-* **Authoritative `.mmd` sources:** https://github.com/openshellorg/shell-architecture[`openshellorg/shell-architecture`] → `docs/modules/ROOT/partials/diagrams/`
-* **Theme:** `theme.json` (concrete Mermaid `themeVariables` for `mmdc`) + `mermaid-config.json`
-* **Build:** Locally, `pnpm diagrams` → `mmdc` (`diagrams/puppeteer.json`) → `@openshellorg/mermaid-svg-css-vars` → Chromium harden (CDATA `<style>`, drop `height="auto"`) → `assets/diagrams/*.svg`. Pages CI ships committed SVGs and only runs `pnpm news`.
-* **Embed:** Mermaid may emit `foreignObject` labels; the site uses `<object type="image/svg+xml">` (not `<img>`). Without CDATA wrapping, Chromium reports SVG "Encoding error" on `#` hex colors in `<style>`.
+* **Authority:** https://github.com/openshellorg/shell-architecture[`openshellorg/shell-architecture`] owns `.mmd`, manifest, adaptive `.svg`, and `.host.svg` artifacts.
+* **Sync:** `pnpm diagrams` copies both committed artifacts from a sibling checkout (or `DIAGRAM_SRC`); `pnpm diagrams -- --check` reports drift.
+* **Delivery:** ordinary adaptive images work without JavaScript. `@dev-centr/themed-svg` 0.1.1 progressively replaces marked images with sanitized host artifacts so the manual `data-theme` palette applies.
+* **Pages:** CI may deploy committed assets without downloading a browser; canonical CI performs regeneration/freshness checks.
 
-Locally, keep a sibling checkout of `shell-architecture` (or set `DIAGRAM_SRC`). CI checks it out to `_diagram-src/`.
+The four PlayTime illustrations classified as non-diagrams remain under `assets/illustrations/` unchanged.

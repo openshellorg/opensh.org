@@ -20,6 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/checkout@v4
+        with:
+          repository: openshellorg/shell-architecture
+          path: _diagram-src
+
       - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
@@ -30,8 +35,7 @@ jobs:
       - name: Install and build news
         run: |
           pnpm install --frozen-lockfile
-          # Architecture diagrams are committed Chromium-hardened SVGs (pnpm diagrams locally).
-          # CI skips mmdc/puppeteer so Pages deploys are not blocked by browser downloads.
+          pnpm diagrams -- --check
           pnpm news
           rm -rf node_modules
 

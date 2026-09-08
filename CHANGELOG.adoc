@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-08 -- Themed SVG delivery
+
+* Synchronize adaptive and host diagram artifacts from `shell-architecture`, replace diagram `<object>` embeds with ordinary image fallbacks, and progressively apply the site’s manual theme through `@dev-centr/themed-svg` 0.1.1.
+
 == 2026-09-02 — Homepage without the charts
 
 * Rewrite homepage for cold visitors: plain pitch, Docs-first CTAs, three bets, living catalog, DevCentr sibling note — no architecture diagrams on the landing page.
