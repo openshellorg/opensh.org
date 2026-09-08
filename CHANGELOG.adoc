@@ -5,6 +5,7 @@
 * Preserve all twelve fixed PlayTime illustrations and synchronize all twelve canonical standalone-adaptive and host pairs from Scriptbook commit `9753437`; retain the four OpenShell-native pairs from `shell-architecture`.
 * Deliver the two referenced PlayTime figures and two OpenShell core figures as same-origin image fallbacks progressively enhanced by `@dev-centr/themed-svg` 0.1.1 with the existing manual theme.
 * Add pinned checksum, XML, SVG safety, accessibility, light/dark, generated-page, same-origin, runtime, and manual-theme validation.
+* Refresh the news stylesheet cache key so deployed runtime-inlined diagrams inherit the light and dark host palettes.
 
 == 2026-09-02 — Homepage without the charts
 

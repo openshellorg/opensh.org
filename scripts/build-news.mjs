@@ -49,7 +49,7 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="${rootPrefix}assets/site.css?v=3a337e3" />
+    <link rel="stylesheet" href="${rootPrefix}assets/site.css?v=themed-svg-1" />
   </head>
   <body>
     ${themeToggle}

@@ -18,6 +18,9 @@ const expectedProgressiveImages = new Map([
 for (const [page, sources] of expectedProgressiveImages) {
   const html = readFileSync(path.join(root, page), "utf8")
   if (/<object\b/i.test(html)) failures.push(`${page}: contains an object embed`)
+  if (!html.includes("../assets/site.css?v=themed-svg-1")) {
+    failures.push(`${page}: stylesheet cache key predates the themed SVG palette`)
+  }
   for (const source of sources) {
     const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
     if (!new RegExp(`<div class="imageblock diagram-svg">[\\s\\S]*?<img src="${escaped}"`, "i").test(html)) {
