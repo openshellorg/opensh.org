@@ -188,7 +188,7 @@ async function main() {
   // RSS
   const rssItems = posts
     .map((post) => {
-      const link = `https://openshellorg.github.io/news/${post.slug}.html`
+      const link = `https://opensh.org/news/${post.slug}.html`
       return `    <item>
       <title>${escapeHtml(post.title)}</title>
       <link>${link}</link>
@@ -203,7 +203,7 @@ async function main() {
 <rss version="2.0">
   <channel>
     <title>OpenShellOrg News</title>
-    <link>https://openshellorg.github.io/news/</link>
+    <link>https://opensh.org/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
 ${rssItems}
   </channel>
@@ -211,7 +211,21 @@ ${rssItems}
 `
   await writeFile(path.join(outDir, "feed.xml"), rss, "utf8")
 
+  const siteOrigin = "https://opensh.org"
+  const sitemapUrls = [
+    `${siteOrigin}/`,
+    `${siteOrigin}/news/`,
+    ...posts.map((post) => `${siteOrigin}/news/${post.slug}.html`),
+  ]
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map((loc) => `  <url>\n    <loc>${loc}</loc>\n  </url>`).join("\n")}
+</urlset>
+`
+  await writeFile(path.join(root, "sitemap.xml"), sitemap, "utf8")
+
   console.log(`Built ${posts.length} news post(s) → news/`)
+  console.log(`Wrote sitemap.xml (${sitemapUrls.length} URLs)`)
 }
 
 main().catch((err) => {

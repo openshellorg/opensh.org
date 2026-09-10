@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-09-10 — Sitemap and robots.txt
+
+* Generate `sitemap.xml` from homepage + news routes during `pnpm news` (`scripts/build-news.mjs`).
+* Publish root `robots.txt` with `Sitemap: https://opensh.org/sitemap.xml`.
+* Point the news RSS channel and item links at `https://opensh.org` (production host).
+* Allow-list `robots.txt` and `sitemap.xml` in `.gitignore`.
+
 == 2026-09-08 -- Themed SVG delivery
 
 * Preserve all twelve fixed PlayTime illustrations and synchronize all twelve canonical standalone-adaptive and host pairs from Scriptbook commit `9753437`; retain the four OpenShell-native pairs from `shell-architecture`.

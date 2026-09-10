@@ -2,40 +2,40 @@
 <rss version="2.0">
   <channel>
     <title>OpenShellOrg News</title>
-    <link>https://openshellorg.github.io/news/</link>
+    <link>https://opensh.org/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
     <item>
       <title>Tool runs leave the scrollback</title>
-      <link>https://openshellorg.github.io/news/tool-runs-leave-the-scrollback.html</link>
-      <guid>https://openshellorg.github.io/news/tool-runs-leave-the-scrollback.html</guid>
+      <link>https://opensh.org/news/tool-runs-leave-the-scrollback.html</link>
+      <guid>https://opensh.org/news/tool-runs-leave-the-scrollback.html</guid>
       <pubDate>Wed, 02 Sep 2026 12:00:00 GMT</pubDate>
       <description>OpenShellOrg published architecture for compilers as structured Tool Runs — shared daemon, embeddable library, and per-command channels — instead of treating stderr as the product.</description>
     </item>
     <item>
       <title>PlayTime as a shell-boundary cousin</title>
-      <link>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</link>
-      <guid>https://openshellorg.github.io/news/playtime-at-the-shell-boundary.html</guid>
+      <link>https://opensh.org/news/playtime-at-the-shell-boundary.html</link>
+      <guid>https://opensh.org/news/playtime-at-the-shell-boundary.html</guid>
       <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
       <description>A document runner that spawns argv without a shell rhymes with OpenShellOrg. It is being built in Dev-Centr scriptbook. We are not moving it.</description>
     </item>
     <item>
       <title>We&amp;#8217;re partnering with DevCentr (on purpose)</title>
-      <link>https://openshellorg.github.io/news/partnering-with-devcentr.html</link>
-      <guid>https://openshellorg.github.io/news/partnering-with-devcentr.html</guid>
+      <link>https://opensh.org/news/partnering-with-devcentr.html</link>
+      <guid>https://opensh.org/news/partnering-with-devcentr.html</guid>
       <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
       <description>OpenShellOrg and DevCentr are aligning hard on shells, entrypoints, and toolchain honesty — without merging into one mega-org.</description>
     </item>
     <item>
       <title>Docs that match how we work</title>
-      <link>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</link>
-      <guid>https://openshellorg.github.io/news/docs-that-match-how-we-work.html</guid>
+      <link>https://opensh.org/news/docs-that-match-how-we-work.html</link>
+      <guid>https://opensh.org/news/docs-that-match-how-we-work.html</guid>
       <pubDate>Sat, 25 Jul 2026 12:00:00 GMT</pubDate>
       <description>Why we moved org docs to Antora with Valentus, and how every main repo became a docs component.</description>
     </item>
     <item>
       <title>Hello, OpenShellOrg</title>
-      <link>https://openshellorg.github.io/news/hello-openshellorg.html</link>
-      <guid>https://openshellorg.github.io/news/hello-openshellorg.html</guid>
+      <link>https://opensh.org/news/hello-openshellorg.html</link>
+      <guid>https://opensh.org/news/hello-openshellorg.html</guid>
       <pubDate>Wed, 04 Feb 2026 12:00:00 GMT</pubDate>
       <description>Why this organization exists, and what we are building first.</description>
     </item>

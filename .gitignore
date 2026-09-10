@@ -20,6 +20,8 @@ diagrams/.cache/**
 !news/index.html
 !news/*.html
 !news/feed.xml
+!robots.txt
+!sitemap.xml
 !CNAME
 !.github/
 !.github/**
