@@ -223,9 +223,14 @@ ${sitemapUrls.map((loc) => `  <url>\n    <loc>${loc}</loc>\n  </url>`).join("\n"
 </urlset>
 `
   await writeFile(path.join(root, "sitemap.xml"), sitemap, "utf8")
+  await writeFile(
+    path.join(root, "robots.txt"),
+    `User-agent: *\nAllow: /\n\nSitemap: ${siteOrigin}/sitemap.xml\n`,
+    "utf8",
+  )
 
   console.log(`Built ${posts.length} news post(s) → news/`)
-  console.log(`Wrote sitemap.xml (${sitemapUrls.length} URLs)`)
+  console.log(`Wrote robots.txt + sitemap.xml (${sitemapUrls.length} URLs)`)
 }
 
 main().catch((err) => {

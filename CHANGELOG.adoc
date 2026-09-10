@@ -3,7 +3,7 @@
 == 2026-09-10 — Sitemap and robots.txt
 
 * Generate `sitemap.xml` from homepage + news routes during `pnpm news` (`scripts/build-news.mjs`).
-* Publish root `robots.txt` with `Sitemap: https://opensh.org/sitemap.xml`.
+* Emit root `robots.txt` from the same build so the Sitemap line stays in sync.
 * Point the news RSS channel and item links at `https://opensh.org` (production host).
 * Allow-list `robots.txt` and `sitemap.xml` in `.gitignore`.
 
