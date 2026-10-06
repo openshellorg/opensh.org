@@ -25,3 +25,5 @@ diagrams/.cache/**
 !CNAME
 !.github/
 !.github/**
+!/.editorconfig
+!/.gitattributes
