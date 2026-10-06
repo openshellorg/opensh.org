@@ -13,7 +13,7 @@
     "test": "node scripts/build-news.mjs && pnpm diagrams:check && node scripts/validate-site.mjs"
   },
   "devDependencies": {
-    "@asciidoctor/core": "^3.0.4",
+    "@asciidoctor/core": "^4.1.1",
     "@dev-centr/themed-svg": "0.1.1",
     "@xmldom/xmldom": "0.9.12"
   }

@@ -1,14 +1,12 @@
 import { readdir, readFile, writeFile, mkdir } from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import Asciidoctor from "@asciidoctor/core"
+import { load } from "@asciidoctor/core"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, "..")
 const postsDir = path.join(root, "news", "posts")
 const outDir = path.join(root, "news")
-
-const asciidoctor = Asciidoctor()
 
 function escapeHtml(s) {
   return String(s)
@@ -83,8 +81,8 @@ function layout({ title, description, active, body, rootPrefix = "../" }) {
 `
 }
 
-function parsePost(filePath, source) {
-  const doc = asciidoctor.load(source, {
+async function parsePost(filePath, source) {
+  const doc = await load(source, {
     safe: "safe",
     attributes: {
       showtitle: false,
@@ -97,7 +95,7 @@ function parsePost(filePath, source) {
   const slug = dateMatch ? dateMatch[2] : base
   const title = doc.getTitle() || slug
   const summary = doc.getAttribute("description") || doc.getAttribute("summary") || ""
-  const html = doc.convert()
+  const html = await doc.convert()
   return { date, slug, title, summary, html, filePath }
 }
 
@@ -123,7 +121,7 @@ async function main() {
   for (const file of files) {
     const filePath = path.join(postsDir, file)
     const source = await readFile(filePath, "utf8")
-    posts.push(parsePost(filePath, source))
+    posts.push(await parsePost(filePath, source))
   }
 
   posts.sort((a, b) => String(b.date).localeCompare(String(a.date)) || String(b.slug).localeCompare(String(a.slug)))

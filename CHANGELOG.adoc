@@ -1,5 +1,11 @@
 = Changelog
 
+== Unreleased
+
+* Bump ``@asciidoctor/core`` from 3.x to ``^4.1.1``.
+
+= Changelog
+
 == 2026-09-10 — Sitemap and robots.txt
 
 * Generate `sitemap.xml` from homepage + news routes during `pnpm news` (`scripts/build-news.mjs`).
