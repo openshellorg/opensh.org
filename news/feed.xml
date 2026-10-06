@@ -5,6 +5,13 @@
     <link>https://opensh.org/news/</link>
     <description>Standards, tooling, and the evolution of OpenShellOrg.</description>
     <item>
+      <title>Agents trust the shell to read a file correctly</title>
+      <link>https://opensh.org/news/agents-trust-the-shell-to-read-a-file-correctly.html</link>
+      <guid>https://opensh.org/news/agents-trust-the-shell-to-read-a-file-correctly.html</guid>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Windows PowerShell 5.1 still reads BOM-less UTF-8 as a 1990s code page, without a warning. Agents edit through the shell all day, so silent transcoding is now an AI-compatibility bug, and the SOS standard is adding text-encoding requirements to say so.</description>
+    </item>
+    <item>
       <title>Tool runs leave the scrollback</title>
       <link>https://opensh.org/news/tool-runs-leave-the-scrollback.html</link>
       <guid>https://opensh.org/news/tool-runs-leave-the-scrollback.html</guid>

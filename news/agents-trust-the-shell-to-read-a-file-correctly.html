@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agents trust the shell to read a file correctly · OpenShellOrg</title>
+    <meta name="description" content="Windows PowerShell 5.1 still reads BOM-less UTF-8 as a 1990s code page, without a warning. Agents edit through the shell all day, so silent transcoding is now an AI-compatibility bug, and the SOS standard is adding text-encoding requirements to say so." />
+    <script>
+      (function () {
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="../assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/site.css?v=themed-svg-1" />
+  </head>
+  <body>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+      </svg>
+    </button>
+    <nav class="topnav" aria-label="Site">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo-mark.svg" width="32" height="32" alt="" />
+        OpenShellOrg
+      </a>
+      <div class="links">
+        <a href="../news/" aria-current="page">News</a>
+        <a href="https://openshellorg.github.io/docs/">Docs</a>
+        <a href="https://openshellorg.github.io/docs/open-shell-org/philosophy.html">Philosophy</a>
+        <a href="https://github.com/openshellorg">GitHub</a>
+      </div>
+    </nav>
+    
+    <main class="page article">
+      <a class="back" href="./">← News</a>
+      <header>
+        <time datetime="2026-10-05">October 5, 2026</time>
+        <h1>Agents trust the shell to read a file correctly</h1>
+        <p class="summary">Windows PowerShell 5.1 still reads BOM-less UTF-8 as a 1990s code page, without a warning. Agents edit through the shell all day, so silent transcoding is now an AI-compatibility bug, and the SOS standard is adding text-encoding requirements to say so.</p>
+      </header>
+      <div class="body">
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>An AI agent that edits a file through a shell assumes the shell read the file correctly.
+On a default Windows machine that assumption is wrong for any UTF-8 file without a byte-order mark, and the shell will not tell anyone.
+We think that makes legacy encoding defaults an AI-compatibility bug in the shell, not a user error, and we are writing it into the SOS standard as one.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_one_em_dash_three_characters"><a class="anchor" href="#_one_em_dash_three_characters"></a>One em dash, three characters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The failure is easy to reproduce.
+Windows PowerShell 5.1, still the program behind <code>powershell.exe</code>, reads a BOM-less file with <code>Get-Content</code> as the system ANSI code page.
+An em dash is three bytes in UTF-8, so the shell hands the agent three characters instead of one.
+The agent changes the line it cares about and writes the file back with <code>Set-Content</code>, and every dash in the file is now stored as <code>&#226;&#8364;&#8221;</code>.
+No exit code changes. No warning is printed. The pipeline reports success.</p>
+</div>
+<div class="paragraph">
+<p>Dev-Centr hit exactly this in October 2026: an agent&#8217;s commit garbled a GitHub Actions workflow badly enough that GitHub refused to parse it, and older changelog prose had been carrying the same damage for a month without anyone noticing.
+Their write-up, <a href="https://devcentr.org/blog/2026-10-05-the-ai-agent-broke-my-em-dashes-and-signed-my-name">The AI agent broke my em dashes and signed my name</a>, covers the incident and the guard they now run.</p>
+</div>
+<div class="paragraph">
+<p>PowerShell 7 fixed these defaults years ago.
+That is the point: the fix exists, and the default a machine ships with still does not use it.
+Agent harnesses take whatever shell is guaranteed to be there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_agents_make_an_old_bug_new"><a class="anchor" href="#_why_agents_make_an_old_bug_new"></a>Why agents make an old bug new</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Humans have run into code-page mojibake for decades and mostly survived it, because a human edits in an editor that sniffs encodings and looks at the result.
+An agent does neither.
+It edits through stdin, stdout and file redirection, it does so hundreds of times a session, and it treats "the command returned zero" as "the command did what I asked."</p>
+</div>
+<div class="paragraph">
+<p>It also cannot see the problem afterwards.
+To a language model, <code>&#226;&#8364;&#8221;</code> is three plausible tokens.
+Unless something in the toolchain flags the bytes, the corruption is indistinguishable from content.</p>
+</div>
+<div class="paragraph">
+<p>That is the same pattern OpenShellOrg keeps returning to, from structured pipelines to tool-run diagnostics: a shell that only produces human-readable text, and only fails in ways a human would notice, is hostile to the programs now doing most of the typing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_a_shell_should_guarantee"><a class="anchor" href="#_what_a_shell_should_guarantee"></a>What a shell should guarantee</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Silent transcoding is a lie about what is in a file.
+The requirements we are adding to the SOS design considerations come down to refusing to lie:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>UTF-8 is the default</strong> for reading files, writing files, pipes between commands, and the console. Not the system code page, not UTF-16, not "it depends on the cmdlet."</p>
+</li>
+<li>
+<p><strong>No silent code-page conversion.</strong> If bytes are not valid in the encoding being used, that is an error or a structured warning, never a quiet best-effort decode.</p>
+</li>
+<li>
+<p><strong>Legacy encodings are a loud, explicit opt-in</strong>, named per command, and reported in machine-readable output so the caller knows a conversion happened.</p>
+</li>
+<li>
+<p><strong>Byte-order marks are handled, not invented.</strong> Read and strip them; never add one unless asked.</p>
+</li>
+<li>
+<p><strong>Round trips are safe.</strong> Read a file and write it back with no changes, and you get the same bytes.</p>
+</li>
+<li>
+<p><strong>Encoding errors are machine-readable</strong>, with the path, byte offset and the encoding that was assumed, so an agent can stop instead of saving garbage.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>None of this is exotic.
+Nushell already behaves this way, and PowerShell 7 mostly does.
+What is missing is a standard that says shells and SOS-compliant tools <strong>must</strong>, so agent authors can rely on it instead of rediscovering the bug repository by repository.</p>
+</div>
+<div class="paragraph">
+<p>The normative text is in the standard&#8217;s <a href="https://docs.opensh.org/open-shell-org/standard-design-considerations/">Design Considerations</a>, under AI compatibility concerns.
+Until shells meet it, put a byte-signature guard in front of your commits; Dev-Centr&#8217;s <a href="https://docs.devcentr.org/general-knowledge/how-to/prevent-text-encoding-corruption/">Prevent text encoding corruption</a> guide shows one.</p>
+</div>
+</div>
+</div>
+      </div>
+    </main>
+    <footer class="site-footer" aria-label="Site footer">
+      <p class="footer-related-label">Related projects</p>
+      <p class="footer-related-links">
+        <a href="https://openshellorg.github.io/">OpenShellOrg</a>
+        ·
+        <a href="https://devcentr.org">DevCentr</a>
+        ·
+        <a href="https://github.com/dlang-supplemental">dlang-supplemental</a>
+      </p>
+    </footer>
+    <script src="../assets/theme.js?v=3a337e3" defer></script>
+    <script src="../assets/themed-svg.js?v=1" type="module"></script>
+  </body>
+</html>
